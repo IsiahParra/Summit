@@ -12,6 +12,9 @@
 		9D12D3B5286F5BD30009018D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D12D3B3286F5BD30009018D /* Main.storyboard */; };
 		9D12D3B7286F5BD40009018D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D12D3B6286F5BD40009018D /* Assets.xcassets */; };
 		9D12D3BA286F5BD40009018D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D12D3B8286F5BD40009018D /* LaunchScreen.storyboard */; };
+		9D71B5B828761A9500100750 /* TrailHomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D71B5B728761A9500100750 /* TrailHomePageViewController.swift */; };
+		9D71B5BF2876205600100750 /* Hikes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D71B5BD2876205600100750 /* Hikes.storyboard */; };
+		9D71B5C12876209D00100750 /* Trails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D71B5C02876209D00100750 /* Trails.storyboard */; };
 		9D7FACF62870B27600C51B9E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7FACF52870B27600C51B9E /* User.swift */; };
 		9D7FACF82871011A00C51B9E /* Trail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7FACF72871011A00C51B9E /* Trail.swift */; };
 		9D8BCAC528741CAE00F2B99A /* Hike.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8BCAC428741CAE00F2B99A /* Hike.swift */; };
@@ -25,6 +28,9 @@
 		9D12D3B6286F5BD40009018D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D12D3B9286F5BD40009018D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D12D3BB286F5BD40009018D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D71B5B728761A9500100750 /* TrailHomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailHomePageViewController.swift; sourceTree = "<group>"; };
+		9D71B5BE2876205600100750 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Summit/Base.lproj/Hikes.storyboard; sourceTree = "<group>"; };
+		9D71B5C02876209D00100750 /* Trails.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Trails.storyboard; sourceTree = "<group>"; };
 		9D7FACF52870B27600C51B9E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9D7FACF72871011A00C51B9E /* Trail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trail.swift; sourceTree = "<group>"; };
 		9D8BCAC428741CAE00F2B99A /* Hike.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hike.swift; sourceTree = "<group>"; };
@@ -64,6 +70,8 @@
 				9D7FACF12870B22800C51B9E /* Models */,
 				9D12D3C1286F5BDC0009018D /* Resources */,
 				9D12D3B3286F5BD30009018D /* Main.storyboard */,
+				9D71B5BD2876205600100750 /* Hikes.storyboard */,
+				9D71B5C02876209D00100750 /* Trails.storyboard */,
 				9D12D3B8286F5BD40009018D /* LaunchScreen.storyboard */,
 			);
 			path = Summit;
@@ -128,6 +136,7 @@
 		9DEC7ED72872858C00D2D0A6 /* TrailView */ = {
 			isa = PBXGroup;
 			children = (
+				9D71B5B728761A9500100750 /* TrailHomePageViewController.swift */,
 			);
 			path = TrailView;
 			sourceTree = "<group>";
@@ -212,8 +221,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D12D3BA286F5BD40009018D /* LaunchScreen.storyboard in Resources */,
+				9D71B5BF2876205600100750 /* Hikes.storyboard in Resources */,
 				9D12D3B7286F5BD40009018D /* Assets.xcassets in Resources */,
 				9D12D3B5286F5BD30009018D /* Main.storyboard in Resources */,
+				9D71B5C12876209D00100750 /* Trails.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D8BCAC528741CAE00F2B99A /* Hike.swift in Sources */,
+				9D71B5B828761A9500100750 /* TrailHomePageViewController.swift in Sources */,
 				9D12D3AE286F5BD30009018D /* AppDelegate.swift in Sources */,
 				9D7FACF62870B27600C51B9E /* User.swift in Sources */,
 				9D7FACF82871011A00C51B9E /* Trail.swift in Sources */,
@@ -249,6 +261,14 @@
 				9D12D3B9286F5BD40009018D /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		9D71B5BD2876205600100750 /* Hikes.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9D71B5BE2876205600100750 /* Base */,
+			);
+			name = Hikes.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
