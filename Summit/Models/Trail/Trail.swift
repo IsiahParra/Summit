@@ -18,6 +18,7 @@ class Trail {
     var entry: String
     var id: String
     var imageURL: String?
+    var completionTime: Double
     // not saved in firestore, it has to be fetched seperatly
     var image: UIImage?
 
@@ -31,6 +32,7 @@ enum Key {
     static let id = "id"
     static let image = "image"
     static let imageURL = "imageURL"
+    static let completionTime = "completionTime"
 
   }
    // Dictionary representation
@@ -42,9 +44,10 @@ enum Key {
          Key.distance : self.distance,
          Key.entry : self.entry,
          Key.id : self.id,
-         Key.imageURL : self.imageURL]
+         Key.imageURL : self.imageURL,
+         Key.completionTime : self.completionTime]
     }
-    init(trailName: String, location: String, rating: Int, date: Date = Date(), distance: Double, entry: String, id: String, image: UIImage?, imageURL: String?) {
+    init(trailName: String, location: String, rating: Int, date: Date = Date(), distance: Double, entry: String, id: String, image: UIImage?, imageURL: String?, completionTime: Double) {
         self.trailName = trailName
         self.location = location
         self.rating = rating
@@ -54,6 +57,7 @@ enum Key {
         self.id = id
         self.image = image
         self.imageURL = imageURL
+        self.completionTime = completionTime
     }
     convenience init?(fromTrailDict dictionary: [String:Any]) {
         guard let trailName = dictionary[Key.trailName] as? String,
@@ -63,8 +67,9 @@ enum Key {
               let distance = dictionary[Key.distance] as? Double,
               let entry = dictionary[Key.entry] as? String,
               let id = dictionary[Key.id] as? String,
-              let imageURL = dictionary[Key.imageURL] as? String
+              let imageURL = dictionary[Key.imageURL] as? String,
+              let completionTime = dictionary[Key.completionTime] as? Double
         else {return nil}
-        self.init(trailName: trailName, location: location, rating: rating, date: Date(timeIntervalSince1970: date), distance: distance, entry: entry, id: id, image: nil, imageURL: imageURL) //image nil for now.
+        self.init(trailName: trailName, location: location, rating: rating, date: Date(timeIntervalSince1970: date), distance: distance, entry: entry, id: id, image: nil, imageURL: imageURL, completionTime: completionTime) //image nil for now.
     }
 }

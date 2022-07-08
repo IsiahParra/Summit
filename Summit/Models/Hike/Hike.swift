@@ -16,6 +16,8 @@ class Hike {
     var entry: String
     var trailID: String
     var userID: String
+    var imageURL: String?
+    var completionTime: Double
 
 enum Key {
     static let hikeName = "hikeName"
@@ -26,6 +28,8 @@ enum Key {
     static let entry = "entry"
     static let trailID = "trailID"
     static let userID = "userID"
+    static let imageURL = "imageURL"
+    static let completionTime = "completionTime"
 
   }
     var trailData: [String:AnyHashable] {
@@ -36,9 +40,11 @@ enum Key {
          Key.distance : self.distance,
          Key.entry : self.entry,
          Key.trailID : self.trailID,
-         Key.userID : self.userID]
+         Key.userID : self.userID,
+         Key.imageURL : self.imageURL,
+         Key.completionTime : self.completionTime]
     }
-    init(hikeName: String, location: String, rating: Int, date: Date = Date(), distance: Double, entry: String, trailID: String, userID: String) {
+    init(hikeName: String, location: String, rating: Int, date: Date = Date(), distance: Double, entry: String, trailID: String, userID: String, imageURL: String?, completionTime: Double) {
         self.hikeName = hikeName
         self.location = location
         self.rating = rating
@@ -47,6 +53,8 @@ enum Key {
         self.entry = entry
         self.trailID = trailID
         self.userID = userID
+        self.imageURL = imageURL
+        self.completionTime = completionTime
     }
     convenience init?(fromTrailDict dictionary: [String:Any]) {
         guard let hikeName = dictionary[Key.hikeName] as? String,
@@ -56,8 +64,10 @@ enum Key {
               let distance = dictionary[Key.distance] as? Double,
               let entry = dictionary[Key.entry] as? String,
               let trailID = dictionary[Key.trailID] as? String,
-              let userID = dictionary[Key.userID] as? String
+              let userID = dictionary[Key.userID] as? String,
+              let imageURL = dictionary[Key.imageURL] as? String,
+              let completionTime = dictionary[Key.completionTime] as? Double
         else {return nil}
-        self.init(hikeName: hikeName, location: location, rating: rating, date: Date(timeIntervalSince1970: date), distance: distance, entry: entry, trailID: trailID, userID: userID)
+        self.init(hikeName: hikeName, location: location, rating: rating, date: Date(timeIntervalSince1970: date), distance: distance, entry: entry, trailID: trailID, userID: userID, imageURL: imageURL, completionTime: completionTime)
     }
 }

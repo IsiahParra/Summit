@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="I3t-mW-wtW">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sign In View Controller-->
+        <scene sceneID="TLB-N9-lrY">
+            <objects>
+                <viewController id="C6m-82-7my" customClass="SignInViewController" customModule="Summit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="56f-7g-Cym">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="jlj-gD-5YG">
+                                <rect key="frame" x="81" y="451" width="253" height="88"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3mo-77-LcR">
+                                        <rect key="frame" x="0.0" y="0.0" width="253" height="34"/>
+                                        <color key="backgroundColor" red="0.97693614890000002" green="1" blue="0.79023422519999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" name="AccentColor"/>
+                                        <color key="textColor" name="AccentColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0cW-ke-PV1">
+                                        <rect key="frame" x="0.0" y="54" width="253" height="34"/>
+                                        <color key="backgroundColor" red="0.97693614890000002" green="1" blue="0.79023422519999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="108" translatesAutoresizingMaskIntoConstraints="NO" id="WM9-sV-VwE">
+                                <rect key="frame" x="100" y="611" width="214" height="170"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yCS-vh-jRN">
+                                        <rect key="frame" x="0.0" y="0.0" width="214" height="31"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" systemColor="systemBrownColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Sign in">
+                                            <color key="baseForegroundColor" red="0.97693614890000002" green="1" blue="0.79023422519999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oe3-rY-nxl">
+                                        <rect key="frame" x="0.0" y="139" width="214" height="31"/>
+                                        <color key="tintColor" systemColor="systemBrownColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title=" Create Account">
+                                            <color key="baseForegroundColor" red="0.97693614890000002" green="1" blue="0.79023422519999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="baseBackgroundColor" systemColor="systemBrownColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="zTT-l9-8GP" kind="show" id="vBG-LA-43A"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="K2,_Mount_Godwin_Austen,_Chogori,_Savage_Mountain" translatesAutoresizingMaskIntoConstraints="NO" id="YyU-WA-yKi">
+                                <rect key="frame" x="55" y="108" width="322" height="201"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Summit" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zeI-cr-gXZ">
+                                <rect key="frame" x="111" y="227" width="193" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" red="0.83449784739999999" green="1" blue="0.62578689649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="55"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xb3-vx-lX6"/>
+                        <color key="backgroundColor" red="0.94759276459999997" green="0.7747266773" blue="0.55337034519999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="jlj-gD-5YG" firstAttribute="leading" secondItem="xb3-vx-lX6" secondAttribute="leading" constant="81" id="Bjf-lz-ekc"/>
+                            <constraint firstItem="xb3-vx-lX6" firstAttribute="trailing" secondItem="WM9-sV-VwE" secondAttribute="trailing" constant="100" id="Krh-Ai-RLj"/>
+                            <constraint firstItem="xb3-vx-lX6" firstAttribute="bottom" secondItem="WM9-sV-VwE" secondAttribute="bottom" constant="81" id="dUP-aC-X0G"/>
+                            <constraint firstItem="xb3-vx-lX6" firstAttribute="trailing" secondItem="jlj-gD-5YG" secondAttribute="trailing" constant="80" id="lxy-MS-Dq4"/>
+                            <constraint firstItem="WM9-sV-VwE" firstAttribute="leading" secondItem="xb3-vx-lX6" secondAttribute="leading" constant="100" id="q8A-yP-XpV"/>
+                            <constraint firstItem="WM9-sV-VwE" firstAttribute="top" secondItem="jlj-gD-5YG" secondAttribute="bottom" constant="72" id="we1-3f-JK0"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="79M-yy-9Qr"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c7M-Z2-rM1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1088.4057971014493" y="-16.071428571428569"/>
+        </scene>
+        <!--UIViewController-Q1h-bY-IVc-->
+        <scene sceneID="NyT-0c-BAM">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="UIViewController-Q1h-bY-IVc" id="zTT-l9-8GP" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Exo-fe-6vK"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a3S-f2-vbr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2274.6376811594205" y="-16.071428571428569"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zpP-8R-6NR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="I3t-mW-wtW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tE9-lQ-nlE">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="C6m-82-7my" kind="relationship" relationship="rootViewController" id="hN3-MY-wRk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xlN-CP-pMX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="178.2608695652174" y="-16.071428571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="K2,_Mount_Godwin_Austen,_Chogori,_Savage_Mountain" width="3008" height="2000"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

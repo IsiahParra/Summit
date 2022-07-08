@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="duq-0H-x6E">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--My Hikes Table View Controller-->
+        <scene sceneID="8dj-jf-XaH">
+            <objects>
+                <tableViewController modalPresentationStyle="fullScreen" id="mjN-IW-sDu" customClass="MyHikesTableViewController" customModule="Summit" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Q9f-xl-908">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.88274361690000003" blue="0.69046114979999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search for your saved hikes..." id="mq6-cp-fm1">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="gI1-Of-PTb">
+                                <rect key="frame" x="0.0" y="88.5" width="414" height="64"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gI1-Of-PTb" id="Qwd-aM-4Lw">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FTm-SR-Cxh">
+                                            <rect key="frame" x="20" y="0.0" width="374" height="51.5"/>
+                                            <color key="tintColor" red="1" green="0.53457228109999999" blue="0.034577818140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="filled" title="My Hikes">
+                                                <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
+                                            </buttonConfiguration>
+                                            <connections>
+                                                <segue destination="1mi-3F-bv4" kind="show" id="gLo-dC-Xxd"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="FTm-SR-Cxh" firstAttribute="top" secondItem="Qwd-aM-4Lw" secondAttribute="top" id="1ES-ht-CHq"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="FTm-SR-Cxh" secondAttribute="bottom" constant="1.5" id="Ni2-LK-C8B"/>
+                                        <constraint firstItem="FTm-SR-Cxh" firstAttribute="leading" secondItem="Qwd-aM-4Lw" secondAttribute="leading" constant="20" id="m28-6e-Kqa"/>
+                                        <constraint firstAttribute="trailing" secondItem="FTm-SR-Cxh" secondAttribute="trailing" constant="20" id="nJf-6M-hUh"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="1" green="0.88274361690000003" blue="0.69046114979999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="mjN-IW-sDu" id="KDu-Xk-RTv"/>
+                            <outlet property="delegate" destination="mjN-IW-sDu" id="r0o-Fn-qF9"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Zii-se-uD8"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m7I-ZP-F8h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="531.8840579710145" y="1718.9732142857142"/>
+        </scene>
+        <!--UIViewController-gCB-e0-ATw-->
+        <scene sceneID="Nbe-bG-4kM">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Hikes" referencedIdentifier="UIViewController-gCB-e0-ATw" id="1mi-3F-bv4" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="OVX-Il-kRQ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OF9-D8-vaa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1573.913043478261" y="1718.9732142857142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2Bz-9o-Vdy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="duq-0H-x6E" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cKG-Zs-RW2">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="mjN-IW-sDu" kind="relationship" relationship="rootViewController" id="he7-Gf-tMI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Liq-UE-RTO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-378.26086956521743" y="1718.9732142857142"/>
+        </scene>
+    </scenes>
+</document>

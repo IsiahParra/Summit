@@ -1,13 +1,13 @@
 //
-//  TrailHomePageViewController.swift
+//  SignInViewController.swift
 //  Summit
 //
-//  Created by Isiah Parra on 7/6/22.
+//  Created by Isiah Parra on 7/8/22.
 //
 
 import UIKit
 
-class TrailHomePageViewController: UIViewController {
+class SignInViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
