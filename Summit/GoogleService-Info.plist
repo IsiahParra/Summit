@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>638400828876-i0drj9pm6miqsbse9sukmb54q667qgfn.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.638400828876-i0drj9pm6miqsbse9sukmb54q667qgfn</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB3loEZm1mZbdpob2BpfMqnKSy0Hzxm2JY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>638400828876</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>Zay.Summit</string>
+	<key>PROJECT_ID</key>
+	<string>personalcapstoneios2</string>
+	<key>STORAGE_BUCKET</key>
+	<string>personalcapstoneios2.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:638400828876:ios:bcb6050ddc2f933cd83969</string>
+</dict>
+</plist>
