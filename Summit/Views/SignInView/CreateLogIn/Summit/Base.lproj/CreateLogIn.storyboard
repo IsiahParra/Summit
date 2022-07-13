@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Q1h-bY-IVc">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -10,42 +10,50 @@
         <!--Create New Account-->
         <scene sceneID="oUR-3u-3ZA">
             <objects>
-                <viewController storyboardIdentifier="UIViewController-Q1h-bY-IVc" modalPresentationStyle="fullScreen" id="Q1h-bY-IVc" customClass="CreateLogInViewController" customModule="Summit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateAccountScreen" modalPresentationStyle="fullScreen" id="Q1h-bY-IVc" customClass="CreateLogInViewController" customModule="Summit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NzE-Ka-CPe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="66" translatesAutoresizingMaskIntoConstraints="NO" id="X9r-pH-cmD">
-                                <rect key="frame" x="100" y="221" width="214" height="140"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="66" translatesAutoresizingMaskIntoConstraints="NO" id="X9r-pH-cmD">
+                                <rect key="frame" x="100" y="210" width="214" height="154"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Email.." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WmQ-Ee-YpH">
-                                        <rect key="frame" x="0.0" y="0.0" width="214" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="214" height="44"/>
                                         <color key="backgroundColor" red="0.97693614890000002" green="1" blue="0.79023422519999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="A6d-ZT-WLY"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Password..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CgL-C1-fTu">
-                                        <rect key="frame" x="0.0" y="106" width="214" height="34"/>
+                                        <rect key="frame" x="0.0" y="110" width="214" height="44"/>
                                         <color key="backgroundColor" red="0.97693614890000002" green="1" blue="0.79023422519999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="XnP-lF-mKs"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="140" id="e4D-zW-7m9"/>
-                                </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DX6-Jx-Ej4">
-                                <rect key="frame" x="174" y="431" width="91" height="47"/>
+                                <rect key="frame" x="120" y="434" width="174" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="kee-Xm-52s"/>
+                                </constraints>
                                 <color key="tintColor" red="1" green="0.70894551159999997" blue="0.63542002580000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Create Account">
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="createAccountButtonTapped:" destination="Q1h-bY-IVc" eventType="touchUpInside" id="ANm-5G-SAG"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Start tracking your hikes!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fE3-kP-bjT">
-                                <rect key="frame" x="74" y="108" width="266" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start tracking your hikes!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fE3-kP-bjT">
+                                <rect key="frame" x="74" y="84" width="266" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -54,38 +62,27 @@
                         <viewLayoutGuide key="safeArea" id="eQU-Ee-ZcQ"/>
                         <color key="backgroundColor" red="1" green="0.88274361690000003" blue="0.69046114979999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="X9r-pH-cmD" firstAttribute="top" secondItem="eQU-Ee-ZcQ" secondAttribute="top" constant="133" id="Dx6-X5-g4k"/>
+                            <constraint firstItem="fE3-kP-bjT" firstAttribute="top" secondItem="eQU-Ee-ZcQ" secondAttribute="top" constant="40" id="0so-ms-VTQ"/>
+                            <constraint firstItem="X9r-pH-cmD" firstAttribute="top" secondItem="fE3-kP-bjT" secondAttribute="bottom" constant="93" id="Dx6-X5-g4k"/>
                             <constraint firstItem="X9r-pH-cmD" firstAttribute="leading" secondItem="eQU-Ee-ZcQ" secondAttribute="leading" constant="100" id="I7H-Yt-oVb"/>
-                            <constraint firstItem="DX6-Jx-Ej4" firstAttribute="leading" secondItem="eQU-Ee-ZcQ" secondAttribute="leading" constant="174" id="Y5H-7j-DXe"/>
+                            <constraint firstItem="DX6-Jx-Ej4" firstAttribute="leading" secondItem="eQU-Ee-ZcQ" secondAttribute="leading" constant="120" id="Y5H-7j-DXe"/>
+                            <constraint firstItem="fE3-kP-bjT" firstAttribute="leading" secondItem="eQU-Ee-ZcQ" secondAttribute="leading" constant="74" id="ZGw-Tf-Agu"/>
                             <constraint firstItem="DX6-Jx-Ej4" firstAttribute="top" secondItem="X9r-pH-cmD" secondAttribute="bottom" constant="70" id="ZN5-Me-CDz"/>
-                            <constraint firstItem="eQU-Ee-ZcQ" firstAttribute="trailing" secondItem="DX6-Jx-Ej4" secondAttribute="trailing" constant="149" id="aTY-Lq-ijn"/>
+                            <constraint firstItem="eQU-Ee-ZcQ" firstAttribute="trailing" secondItem="DX6-Jx-Ej4" secondAttribute="trailing" constant="120" id="aTY-Lq-ijn"/>
                             <constraint firstItem="eQU-Ee-ZcQ" firstAttribute="trailing" secondItem="X9r-pH-cmD" secondAttribute="trailing" constant="100" id="hlA-zL-O8E"/>
                             <constraint firstItem="eQU-Ee-ZcQ" firstAttribute="bottom" secondItem="DX6-Jx-Ej4" secondAttribute="bottom" constant="384" id="kI1-KA-Kbx"/>
+                            <constraint firstItem="eQU-Ee-ZcQ" firstAttribute="trailing" secondItem="fE3-kP-bjT" secondAttribute="trailing" constant="74" id="r2K-e0-djf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Create New Account" largeTitleDisplayMode="always" id="Lw9-7S-lIT"/>
+                    <connections>
+                        <outlet property="emailAddressTextField" destination="WmQ-Ee-YpH" id="Uf4-Kg-aRt"/>
+                        <outlet property="passwordTextField" destination="CgL-C1-fTu" id="5R6-l7-m9F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c6o-Ou-mGC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2275.36231884058" y="-16.071428571428569"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="d9c-2m-zWr">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="p9x-n7-kxv" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1Y8-om-dPw">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Q1h-bY-IVc" kind="relationship" relationship="rootViewController" id="o7p-Nl-vEb"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oAV-WF-N6d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1365.217391304348" y="-16.071428571428569"/>
         </scene>
     </scenes>
 </document>

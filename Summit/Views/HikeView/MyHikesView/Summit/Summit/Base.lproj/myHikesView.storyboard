@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -35,7 +36,7 @@
                                                 <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
                                             </buttonConfiguration>
                                             <connections>
-                                                <segue destination="1mi-3F-bv4" kind="show" id="gLo-dC-Xxd"/>
+                                                <segue destination="mll-e9-nOo" kind="show" id="g8R-91-JZr"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -61,19 +62,52 @@
             </objects>
             <point key="canvasLocation" x="531.8840579710145" y="1718.9732142857142"/>
         </scene>
-        <!--UIViewController-gCB-e0-ATw-->
+        <!--myHikesDetail-->
         <scene sceneID="Nbe-bG-4kM">
             <objects>
-                <viewControllerPlaceholder storyboardName="Hikes" referencedIdentifier="UIViewController-gCB-e0-ATw" id="1mi-3F-bv4" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="myHikesDetail" id="1mi-3F-bv4" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="OVX-Il-kRQ"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OF9-D8-vaa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1573.913043478261" y="1718.9732142857142"/>
+            <point key="canvasLocation" x="2607" y="1373"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="sAb-n3-wyL">
+            <objects>
+                <tableViewController id="mll-e9-nOo" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="ZMM-vg-bRb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Aya-h9-PQL">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Aya-h9-PQL" id="W3C-Fv-0IH">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="1mi-3F-bv4" kind="show" id="WTQ-vi-pDZ"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="mll-e9-nOo" id="ns3-37-VjK"/>
+                            <outlet property="delegate" destination="mll-e9-nOo" id="3oU-ln-LcT"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Tn0-Yt-S9h"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="emu-x8-Cig" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1493" y="1719"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2Bz-9o-Vdy">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Liq-UE-RTO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="duq-0H-x6E" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cKG-Zs-RW2">
@@ -85,9 +119,13 @@
                         <segue destination="mjN-IW-sDu" kind="relationship" relationship="rootViewController" id="he7-Gf-tMI"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Liq-UE-RTO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-378.26086956521743" y="1718.9732142857142"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

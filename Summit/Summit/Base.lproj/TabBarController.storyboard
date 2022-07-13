@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Aav-hf-Bwf">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -9,20 +9,20 @@
         <!--Tab Bar Controller-->
         <scene sceneID="kc0-V3-uSJ">
             <objects>
-                <tabBarController id="Aav-hf-Bwf" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarMain" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Aav-hf-Bwf" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jY8-sU-7QM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="8ys-FD-sKD" kind="relationship" relationship="viewControllers" id="K80-JL-IPf"/>
-                        <segue destination="g5c-J4-ack" kind="relationship" relationship="viewControllers" id="sfD-CF-3Ta"/>
+                        <segue destination="8ys-FD-sKD" kind="relationship" relationship="viewControllers" id="Rul-sw-TyA"/>
+                        <segue destination="g5c-J4-ack" kind="relationship" relationship="viewControllers" id="WGm-Gt-PqX"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rVR-SR-C38" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2309" y="1719"/>
+            <point key="canvasLocation" x="-2364" y="631"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jpY-Um-KfY">
@@ -41,15 +41,17 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ke1-36-FrC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1288.4057971014495" y="1718.9732142857142"/>
+            <point key="canvasLocation" x="-3209" y="1428"/>
         </scene>
-        <!--UINavigationController-qjk-KG-Af0-->
+        <!--Trails-->
         <scene sceneID="K3f-sZ-jeK">
             <objects>
-                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="UINavigationController-qjk-KG-Af0" id="g5c-J4-ack" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Trails" id="g5c-J4-ack" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="dJ8-Ne-V3c"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y1U-zK-hre" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1288.4057971014495" y="2455.5803571428569"/>
+            <point key="canvasLocation" x="-1647" y="1081"/>
         </scene>
         <!--myHikesView-->
         <scene sceneID="cIx-he-Q1p">
@@ -59,15 +61,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ekG-Vt-8De" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-378.26086956521743" y="1718.9732142857142"/>
-        </scene>
-        <!--UIViewController-gCB-e0-ATw-->
-        <scene sceneID="G4c-0i-WoI">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="UIViewController-gCB-e0-ATw" storyboardName="myHikesDetail" referencedIdentifier="UIViewController-gCB-e0-ATw" id="glP-N2-u5B" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fbi-pt-Phh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="663.768115942029" y="1718.9732142857142"/>
+            <point key="canvasLocation" x="-2946" y="1910"/>
         </scene>
     </scenes>
     <resources>

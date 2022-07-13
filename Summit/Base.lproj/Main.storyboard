@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="V1g-M8-bAl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="h8Y-N6-eo8">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="fGK-vq-ddX">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="V1g-M8-bAl" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="V1g-M8-bAl" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="l2A-3x-Whc"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Jy9-a8-BOi">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -24,14 +27,6 @@
             </objects>
             <point key="canvasLocation" x="-731.8840579710145" y="-16.071428571428569"/>
         </scene>
-        <!--UINavigationController-qjk-KG-Af0-->
-        <scene sceneID="369-ta-Duh">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="UINavigationController-qjk-KG-Af0" storyboardName="Trails" referencedIdentifier="UINavigationController-qjk-KG-Af0" id="fza-D9-bL0" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0es-1b-eHW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1288.4057971014495" y="2455.5803571428569"/>
-        </scene>
         <!--SignInScreen-->
         <scene sceneID="dSa-y3-nBf">
             <objects>
@@ -42,13 +37,51 @@
             </objects>
             <point key="canvasLocation" x="178.2608695652174" y="-16.071428571428569"/>
         </scene>
-        <!--UIViewController-Q1h-bY-IVc-->
-        <scene sceneID="4lU-hx-RMR">
+        <!--TabBarController-->
+        <scene sceneID="bcx-an-qBT">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="UIViewController-Q1h-bY-IVc" storyboardName="CreateLogIn" referencedIdentifier="UIViewController-Q1h-bY-IVc" id="BOQ-Tj-oMz" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Vzh-6L-Kwo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="TabBarController" id="Ibt-An-c0N" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="9Ix-w1-5L1"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OlK-Ii-pCe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1365.217391304348" y="-16.071428571428569"/>
+            <point key="canvasLocation" x="-1179" y="679"/>
+        </scene>
+        <!--Launch Screen Copy View Controller-->
+        <scene sceneID="dgw-Ha-XuO">
+            <objects>
+                <viewController id="h8Y-N6-eo8" customClass="LaunchScreenCopyViewController" customModule="Summit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KO5-bo-6iv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgy-Hn-O1h">
+                                <rect key="frame" x="187" y="437.5" width="40" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PXu-n6-faT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tgy-Hn-O1h" firstAttribute="centerX" secondItem="KO5-bo-6iv" secondAttribute="centerX" id="5HG-CK-Gif"/>
+                            <constraint firstItem="tgy-Hn-O1h" firstAttribute="centerY" secondItem="KO5-bo-6iv" secondAttribute="centerY" id="rTX-gO-qGl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="V1g-M8-bAl" kind="presentation" identifier="ToSignInScreen" modalPresentationStyle="fullScreen" id="n46-I5-eZj"/>
+                        <segue destination="Ibt-An-c0N" kind="show" identifier="ToTabBar" id="Ofl-QF-byz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T0x-NG-emT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1632" y="-16"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

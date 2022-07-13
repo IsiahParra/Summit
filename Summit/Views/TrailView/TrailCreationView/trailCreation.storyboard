@@ -11,7 +11,7 @@
         <!--Trail Creation View Controller-->
         <scene sceneID="H2D-il-eUU">
             <objects>
-                <viewController storyboardIdentifier="UIViewController-bU5-qg-lKs" id="bU5-qg-lKs" customClass="TrailCreationViewController" customModule="Summit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreatingTrail" id="bU5-qg-lKs" customClass="TrailCreationViewController" customModule="Summit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tG3-Nq-631">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
