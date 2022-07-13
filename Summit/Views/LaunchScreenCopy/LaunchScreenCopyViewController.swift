@@ -18,6 +18,7 @@ class LaunchScreenCopyViewController: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        //TODO: refactor and sign in with apple
         if Auth.auth().currentUser != nil {
             performSegue(withIdentifier: "ToTabBar", sender: self)
         } else {
