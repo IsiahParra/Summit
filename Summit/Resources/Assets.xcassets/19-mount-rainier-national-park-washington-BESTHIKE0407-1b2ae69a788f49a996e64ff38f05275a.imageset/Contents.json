@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "19-mount-rainier-national-park-washington-BESTHIKE0407-1b2ae69a788f49a996e64ff38f05275a.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

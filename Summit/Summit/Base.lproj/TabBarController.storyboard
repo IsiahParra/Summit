@@ -47,7 +47,7 @@
         <scene sceneID="K3f-sZ-jeK">
             <objects>
                 <viewControllerPlaceholder storyboardName="Trails" id="g5c-J4-ack" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="dJ8-Ne-V3c"/>
+                    <tabBarItem key="tabBarItem" title="" image="icons8-trail-50" id="dJ8-Ne-V3c"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y1U-zK-hre" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -66,5 +66,6 @@
     </scenes>
     <resources>
         <image name="icons8-boots-50" width="50" height="50"/>
+        <image name="icons8-trail-50" width="50" height="50"/>
     </resources>
 </document>

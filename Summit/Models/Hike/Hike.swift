@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Hike {
     var hikeName: String
@@ -18,6 +19,7 @@ class Hike {
     var userID: String
     var imageURL: String?
     var completionTime: Double
+    var hikeImage: UIImage
 
 enum Key {
     static let hikeName = "hikeName"
@@ -30,6 +32,7 @@ enum Key {
     static let userID = "userID"
     static let imageURL = "imageURL"
     static let completionTime = "completionTime"
+    static let hikeImage = "hikeImage"
 
   }
     var trailData: [String:AnyHashable] {
@@ -42,9 +45,10 @@ enum Key {
          Key.trailID : self.trailID,
          Key.userID : self.userID,
          Key.imageURL : self.imageURL,
-         Key.completionTime : self.completionTime]
+         Key.completionTime : self.completionTime,
+         Key.hikeImage : self.hikeImage]
     }
-    init(hikeName: String, location: String, rating: Int, date: Date = Date(), distance: Double, entry: String, trailID: String, userID: String, imageURL: String?, completionTime: Double) {
+    init(hikeName: String, location: String, rating: Int, date: Date = Date(), distance: Double, entry: String, trailID: String, userID: String, imageURL: String?, completionTime: Double, hikeImage: UIImage) {
         self.hikeName = hikeName
         self.location = location
         self.rating = rating
@@ -55,6 +59,7 @@ enum Key {
         self.userID = userID
         self.imageURL = imageURL
         self.completionTime = completionTime
+        self.hikeImage = hikeImage
     }
     convenience init?(fromTrailDict dictionary: [String:Any]) {
         guard let hikeName = dictionary[Key.hikeName] as? String,
@@ -66,8 +71,9 @@ enum Key {
               let trailID = dictionary[Key.trailID] as? String,
               let userID = dictionary[Key.userID] as? String,
               let imageURL = dictionary[Key.imageURL] as? String,
-              let completionTime = dictionary[Key.completionTime] as? Double
+              let completionTime = dictionary[Key.completionTime] as? Double,
+              let hikeImage = dictionary[Key.hikeImage] as? UIImage
         else {return nil}
-        self.init(hikeName: hikeName, location: location, rating: rating, date: Date(timeIntervalSince1970: date), distance: distance, entry: entry, trailID: trailID, userID: userID, imageURL: imageURL, completionTime: completionTime)
+        self.init(hikeName: hikeName, location: location, rating: rating, date: Date(timeIntervalSince1970: date), distance: distance, entry: entry, trailID: trailID, userID: userID, imageURL: imageURL, completionTime: completionTime, hikeImage: hikeImage)
     }
 }

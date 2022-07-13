@@ -20,6 +20,9 @@ class SignInViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    let viewModel: SignInViewModel = SignInViewModel()
+    
+    
     @IBAction func createAccountTapped(_ sender: Any) {
 //        if emailAddressTextField.text?.isEmpty == true {
 //            print("No text entered in email text box")
@@ -97,5 +100,15 @@ class SignInViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    }
+}
+
+extension SignInViewController: SignInViewModelDelegate {
+    func presentAlertController() {
+        let alertController = UIAlertController(title: "No account found", message: "Please check email and password", preferredStyle: .alert)
+        let confirmAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alertController.addAction(confirmAction)
+        present(alertController, animated: true)
+        
     }
 }

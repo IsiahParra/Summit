@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AZ8-Z4-olT">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--trailCreation-->
+        <scene sceneID="9Ca-8h-WBG">
+            <objects>
+                <viewControllerPlaceholder storyboardName="trailCreation" id="q2A-X4-nIO" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Vgt-EN-D7y"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lhL-xZ-kXa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2255" y="3009"/>
+        </scene>
+        <!--trailsDetailView-->
+        <scene sceneID="ehU-eb-faI">
+            <objects>
+                <viewControllerPlaceholder storyboardName="trailsDetailView" id="xNZ-6p-12t" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="NuH-Pw-Mx9"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i8Z-Xt-ypx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-836" y="3026"/>
+        </scene>
+        <!--Welcome to your Trails List-->
+        <scene sceneID="Wd9-Xw-rVF">
+            <objects>
+                <tableViewController id="X51-vD-dFl" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="x0k-M9-9Hc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.88274361690000003" blue="0.69046114979999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="162" id="4Iq-2g-mZt">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="162"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4Iq-2g-mZt" id="emu-Qc-ONN">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="162"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="taV-uY-ufK">
+                                            <rect key="frame" x="20" y="13" width="136" height="136"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="400" id="W6t-QJ-6iM"/>
+                                                <constraint firstAttribute="width" secondItem="taV-uY-ufK" secondAttribute="height" multiplier="1:1" id="nYx-u7-qfT"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trail Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pjU-CT-k0e">
+                                            <rect key="frame" x="305" y="118" width="81" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="taV-uY-ufK" firstAttribute="top" secondItem="emu-Qc-ONN" secondAttribute="topMargin" constant="2" id="456-0B-2Vi"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="pjU-CT-k0e" secondAttribute="trailing" constant="8" id="4DB-Os-Qfl"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="pjU-CT-k0e" secondAttribute="bottom" constant="12" id="808-tp-8m4"/>
+                                        <constraint firstItem="taV-uY-ufK" firstAttribute="leading" secondItem="emu-Qc-ONN" secondAttribute="leadingMargin" id="Jw2-w4-cmw"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="taV-uY-ufK" secondAttribute="bottom" constant="2" id="QeV-bG-Hrn"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.94759276459999997" green="0.7747266773" blue="0.55337034519999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="xNZ-6p-12t" kind="show" id="5FA-H6-I8r"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="X51-vD-dFl" id="KYI-fZ-Lxr"/>
+                            <outlet property="delegate" destination="X51-vD-dFl" id="COn-P6-LXx"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Welcome to your Trails List" id="sW1-Nm-KvM">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="8aa-1N-oMM">
+                            <connections>
+                                <segue destination="q2A-X4-nIO" kind="show" id="dWA-Ij-oXa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kUg-Tz-IM1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1594.2028985507247" y="2576.7857142857142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="KEE-SP-nM3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AZ8-Z4-olT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hfn-Da-9do">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="X51-vD-dFl" kind="relationship" relationship="rootViewController" id="fDa-lT-sLU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mn5-5p-C8a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2686" y="2577"/>
+        </scene>
+    </scenes>
+</document>

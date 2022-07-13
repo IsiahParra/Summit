@@ -3,18 +3,17 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--My Hikes Table View Controller-->
+        <!--Welcome to My Hikes-->
         <scene sceneID="8dj-jf-XaH">
             <objects>
                 <tableViewController modalPresentationStyle="fullScreen" id="mjN-IW-sDu" customClass="MyHikesTableViewController" customModule="Summit" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Q9f-xl-908">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.88274361690000003" blue="0.69046114979999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.94759276459999997" green="0.7747266773" blue="0.55337034519999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search for your saved hikes..." id="mq6-cp-fm1">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -56,7 +55,7 @@
                             <outlet property="delegate" destination="mjN-IW-sDu" id="r0o-Fn-qF9"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Zii-se-uD8"/>
+                    <navigationItem key="navigationItem" title="Welcome to My Hikes" id="Zii-se-uD8"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m7I-ZP-F8h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -72,24 +71,48 @@
             </objects>
             <point key="canvasLocation" x="2607" y="1373"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Hikes-->
         <scene sceneID="sAb-n3-wyL">
             <objects>
                 <tableViewController id="mll-e9-nOo" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="ZMM-vg-bRb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="1" green="0.88274361690000003" blue="0.69046114979999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Aya-h9-PQL">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="134" id="yz2-xC-vWb">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="134"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Aya-h9-PQL" id="W3C-Fv-0IH">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yz2-xC-vWb" id="zBA-Fj-kp3">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="134"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZlA-FB-tcN">
+                                            <rect key="frame" x="20" y="13" width="108" height="108"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="400" id="4JP-iS-dtq"/>
+                                                <constraint firstAttribute="width" secondItem="ZlA-FB-tcN" secondAttribute="height" multiplier="1:1" id="rin-GO-Y0U"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hike Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DHA-0q-JvZ">
+                                            <rect key="frame" x="319" y="90" width="83" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ZlA-FB-tcN" firstAttribute="top" secondItem="zBA-Fj-kp3" secondAttribute="topMargin" constant="2" id="6fS-IW-Wsv"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="ZlA-FB-tcN" secondAttribute="bottom" constant="2" id="a6O-bK-zHy"/>
+                                        <constraint firstItem="ZlA-FB-tcN" firstAttribute="leading" secondItem="zBA-Fj-kp3" secondAttribute="leadingMargin" id="cDV-Qo-0Hz"/>
+                                        <constraint firstItem="DHA-0q-JvZ" firstAttribute="trailing" secondItem="zBA-Fj-kp3" secondAttribute="trailingMargin" constant="8" id="ooG-Xb-G7E"/>
+                                        <constraint firstItem="DHA-0q-JvZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZlA-FB-tcN" secondAttribute="trailing" constant="8" symbolic="YES" id="tR5-6e-O3F"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="DHA-0q-JvZ" secondAttribute="bottom" constant="12" id="w6L-Vj-AaC"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.94759276459999997" green="0.7747266773" blue="0.55337034519999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <segue destination="1mi-3F-bv4" kind="show" id="WTQ-vi-pDZ"/>
+                                    <segue destination="1mi-3F-bv4" kind="show" id="cxF-Rw-xIM"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -98,7 +121,7 @@
                             <outlet property="delegate" destination="mll-e9-nOo" id="3oU-ln-LcT"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Tn0-Yt-S9h"/>
+                    <navigationItem key="navigationItem" title="Hikes" id="Tn0-Yt-S9h"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="emu-x8-Cig" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -107,7 +130,6 @@
         <!--Navigation Controller-->
         <scene sceneID="2Bz-9o-Vdy">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Liq-UE-RTO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="duq-0H-x6E" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cKG-Zs-RW2">
@@ -119,13 +141,9 @@
                         <segue destination="mjN-IW-sDu" kind="relationship" relationship="rootViewController" id="he7-Gf-tMI"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Liq-UE-RTO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-378.26086956521743" y="1718.9732142857142"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

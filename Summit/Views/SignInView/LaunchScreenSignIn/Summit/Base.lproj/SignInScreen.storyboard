@@ -12,7 +12,7 @@
         <!--Sign In View Controller-->
         <scene sceneID="vje-oO-9pN">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="SI8-FB-dtT" customClass="SignInViewController" customModule="Summit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInView" modalPresentationStyle="fullScreen" id="SI8-FB-dtT" customClass="SignInViewController" customModule="Summit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RMQ-MG-O3A">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,7 +27,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="314" height="34"/>
                                         <color key="backgroundColor" red="0.97693614890000002" green="1" blue="0.79023422519999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" name="AccentColor"/>
-                                        <color key="textColor" name="AccentColor"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -40,7 +40,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="108" translatesAutoresizingMaskIntoConstraints="NO" id="gqF-fr-0Ld">
-                                <rect key="frame" x="100" y="555" width="234" height="170"/>
+                                <rect key="frame" x="100" y="555" width="234" height="309"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5i-Sw-s6P">
                                         <rect key="frame" x="0.0" y="0.0" width="234" height="31"/>
@@ -54,8 +54,14 @@
                                             <action selector="signInButtonTapped:" destination="SI8-FB-dtT" eventType="touchUpInside" id="LgB-DV-aqJ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J7T-U9-JXt">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oKG-l5-ew2">
                                         <rect key="frame" x="0.0" y="139" width="234" height="31"/>
+                                        <color key="tintColor" systemColor="systemBrownColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Sign In with Apple"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J7T-U9-JXt">
+                                        <rect key="frame" x="0.0" y="278" width="234" height="31"/>
                                         <color key="tintColor" systemColor="systemBrownColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title=" Create Account">
