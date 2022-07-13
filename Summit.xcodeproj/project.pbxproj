@@ -12,12 +12,38 @@
 		9D12D3B5286F5BD30009018D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D12D3B3286F5BD30009018D /* Main.storyboard */; };
 		9D12D3B7286F5BD40009018D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D12D3B6286F5BD40009018D /* Assets.xcassets */; };
 		9D12D3BA286F5BD40009018D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D12D3B8286F5BD40009018D /* LaunchScreen.storyboard */; };
-		9D71B5B828761A9500100750 /* TrailHomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D71B5B728761A9500100750 /* TrailHomePageViewController.swift */; };
-		9D71B5BF2876205600100750 /* Hikes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D71B5BD2876205600100750 /* Hikes.storyboard */; };
+		9D2F01F8287E37AF005EEEED /* LaunchScreenCopyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2F01F7287E37AF005EEEED /* LaunchScreenCopyViewController.swift */; };
+		9D71B5BF2876205600100750 /* TabBarController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D71B5BD2876205600100750 /* TabBarController.storyboard */; };
 		9D71B5C12876209D00100750 /* Trails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D71B5C02876209D00100750 /* Trails.storyboard */; };
+		9D71B5C42877453400100750 /* myHikesView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D71B5C22877453400100750 /* myHikesView.storyboard */; };
+		9D71B5C7287748A500100750 /* MyHikesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D71B5C6287748A500100750 /* MyHikesTableViewController.swift */; };
+		9D71B5C9287748D600100750 /* myHikesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D71B5C8287748D600100750 /* myHikesViewModel.swift */; };
+		9D71B5CD2877491100100750 /* myHikesDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D71B5CB2877491100100750 /* myHikesDetail.storyboard */; };
+		9D71B5CF2877494E00100750 /* myHikesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D71B5CE2877494E00100750 /* myHikesDetailViewController.swift */; };
+		9D71B5D12877496700100750 /* myHikesDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D71B5D02877496700100750 /* myHikesDetailViewModel.swift */; };
+		9D71B5D3287749CE00100750 /* trailsDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D71B5D2287749CE00100750 /* trailsDetailView.storyboard */; };
+		9D71B5D6287749FD00100750 /* TrailsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D71B5D5287749FD00100750 /* TrailsDetailViewController.swift */; };
+		9D71B5D828774A1600100750 /* TrailDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D71B5D728774A1600100750 /* TrailDetailViewModel.swift */; };
+		9D71B5DB28774A8500100750 /* trailCreation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D71B5DA28774A8500100750 /* trailCreation.storyboard */; };
+		9D71B5DD28774AC100100750 /* TrailCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D71B5DC28774AC100100750 /* TrailCreationViewController.swift */; };
+		9D71B5DF28774B0400100750 /* TrailCreationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D71B5DE28774B0400100750 /* TrailCreationViewModel.swift */; };
+		9D71B5E128774D4C00100750 /* trailTracking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D71B5E028774D4C00100750 /* trailTracking.storyboard */; };
+		9D71B5E428774DB300100750 /* CurrentTrailTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D71B5E328774DB300100750 /* CurrentTrailTrackingViewController.swift */; };
+		9D71B5E628774DD200100750 /* CurrentTrailTrackingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D71B5E528774DD200100750 /* CurrentTrailTrackingViewModel.swift */; };
+		9D71B5E92877627300100750 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D71B5E82877627300100750 /* DateHelper.swift */; };
+		9D71B5ED287800B900100750 /* SignInScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D71B5EB287800B900100750 /* SignInScreen.storyboard */; };
+		9D71B5EF287800F000100750 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D71B5EE287800F000100750 /* SignInViewController.swift */; };
+		9D71B5F42878015C00100750 /* CreateLogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D71B5F22878015C00100750 /* CreateLogIn.storyboard */; };
+		9D71B5F7287802C100100750 /* CreateLogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D71B5F6287802C100100750 /* CreateLogInViewController.swift */; };
 		9D7FACF62870B27600C51B9E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7FACF52870B27600C51B9E /* User.swift */; };
 		9D7FACF82871011A00C51B9E /* Trail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7FACF72871011A00C51B9E /* Trail.swift */; };
 		9D8BCAC528741CAE00F2B99A /* Hike.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8BCAC428741CAE00F2B99A /* Hike.swift */; };
+		9DAE1EC3287C8D8D00AE191A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 9DAE1EC2287C8D8D00AE191A /* FirebaseAuth */; };
+		9DAE1EC5287C8D8D00AE191A /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 9DAE1EC4287C8D8D00AE191A /* FirebaseDatabase */; };
+		9DAE1EC7287C8D8D00AE191A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 9DAE1EC6287C8D8D00AE191A /* FirebaseFirestore */; };
+		9DAE1EC9287C8D8D00AE191A /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 9DAE1EC8287C8D8D00AE191A /* FirebaseStorage */; };
+		9DAE1ECB287C8E6E00AE191A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9DAE1ECA287C8E6E00AE191A /* GoogleService-Info.plist */; };
+		9DAE1ECD287CC4EB00AE191A /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAE1ECC287CC4EB00AE191A /* FirebaseService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,12 +54,34 @@
 		9D12D3B6286F5BD40009018D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D12D3B9286F5BD40009018D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D12D3BB286F5BD40009018D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9D71B5B728761A9500100750 /* TrailHomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailHomePageViewController.swift; sourceTree = "<group>"; };
-		9D71B5BE2876205600100750 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Summit/Base.lproj/Hikes.storyboard; sourceTree = "<group>"; };
+		9D2F01F7287E37AF005EEEED /* LaunchScreenCopyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenCopyViewController.swift; sourceTree = "<group>"; };
+		9D71B5BE2876205600100750 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Summit/Base.lproj/TabBarController.storyboard; sourceTree = "<group>"; };
 		9D71B5C02876209D00100750 /* Trails.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Trails.storyboard; sourceTree = "<group>"; };
+		9D71B5C32877453400100750 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Summit/Summit/Base.lproj/myHikesView.storyboard; sourceTree = "<group>"; };
+		9D71B5C6287748A500100750 /* MyHikesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHikesTableViewController.swift; sourceTree = "<group>"; };
+		9D71B5C8287748D600100750 /* myHikesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myHikesViewModel.swift; sourceTree = "<group>"; };
+		9D71B5CC2877491100100750 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Summit/Summit/Base.lproj/myHikesDetail.storyboard; sourceTree = "<group>"; };
+		9D71B5CE2877494E00100750 /* myHikesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myHikesDetailViewController.swift; sourceTree = "<group>"; };
+		9D71B5D02877496700100750 /* myHikesDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myHikesDetailViewModel.swift; sourceTree = "<group>"; };
+		9D71B5D2287749CE00100750 /* trailsDetailView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = trailsDetailView.storyboard; sourceTree = "<group>"; };
+		9D71B5D5287749FD00100750 /* TrailsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailsDetailViewController.swift; sourceTree = "<group>"; };
+		9D71B5D728774A1600100750 /* TrailDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailDetailViewModel.swift; sourceTree = "<group>"; };
+		9D71B5DA28774A8500100750 /* trailCreation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = trailCreation.storyboard; sourceTree = "<group>"; };
+		9D71B5DC28774AC100100750 /* TrailCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailCreationViewController.swift; sourceTree = "<group>"; };
+		9D71B5DE28774B0400100750 /* TrailCreationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailCreationViewModel.swift; sourceTree = "<group>"; };
+		9D71B5E028774D4C00100750 /* trailTracking.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = trailTracking.storyboard; sourceTree = "<group>"; };
+		9D71B5E328774DB300100750 /* CurrentTrailTrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTrailTrackingViewController.swift; sourceTree = "<group>"; };
+		9D71B5E528774DD200100750 /* CurrentTrailTrackingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTrailTrackingViewModel.swift; sourceTree = "<group>"; };
+		9D71B5E82877627300100750 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		9D71B5EC287800B900100750 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Summit/Base.lproj/SignInScreen.storyboard; sourceTree = "<group>"; };
+		9D71B5EE287800F000100750 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		9D71B5F32878015C00100750 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Summit/Base.lproj/CreateLogIn.storyboard; sourceTree = "<group>"; };
+		9D71B5F6287802C100100750 /* CreateLogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLogInViewController.swift; sourceTree = "<group>"; };
 		9D7FACF52870B27600C51B9E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9D7FACF72871011A00C51B9E /* Trail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trail.swift; sourceTree = "<group>"; };
 		9D8BCAC428741CAE00F2B99A /* Hike.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hike.swift; sourceTree = "<group>"; };
+		9DAE1ECA287C8E6E00AE191A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9DAE1ECC287CC4EB00AE191A /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +89,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DAE1EC5287C8D8D00AE191A /* FirebaseDatabase in Frameworks */,
+				9DAE1EC9287C8D8D00AE191A /* FirebaseStorage in Frameworks */,
+				9DAE1EC3287C8D8D00AE191A /* FirebaseAuth in Frameworks */,
+				9DAE1EC7287C8D8D00AE191A /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,11 +118,13 @@
 		9D12D3AC286F5BD30009018D /* Summit */ = {
 			isa = PBXGroup;
 			children = (
+				9DAE1ECA287C8E6E00AE191A /* GoogleService-Info.plist */,
+				9D71B5E72877625500100750 /* Helper Files */,
 				9DEC7ED62872858300D2D0A6 /* Views */,
 				9D7FACF12870B22800C51B9E /* Models */,
 				9D12D3C1286F5BDC0009018D /* Resources */,
 				9D12D3B3286F5BD30009018D /* Main.storyboard */,
-				9D71B5BD2876205600100750 /* Hikes.storyboard */,
+				9D71B5BD2876205600100750 /* TabBarController.storyboard */,
 				9D71B5C02876209D00100750 /* Trails.storyboard */,
 				9D12D3B8286F5BD40009018D /* LaunchScreen.storyboard */,
 			);
@@ -86,6 +140,91 @@
 				9D12D3BB286F5BD40009018D /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		9D2F01F6287E3794005EEEED /* LaunchScreenCopy */ = {
+			isa = PBXGroup;
+			children = (
+				9D2F01F7287E37AF005EEEED /* LaunchScreenCopyViewController.swift */,
+			);
+			path = LaunchScreenCopy;
+			sourceTree = "<group>";
+		};
+		9D71B5C52877454900100750 /* MyHikesView */ = {
+			isa = PBXGroup;
+			children = (
+				9D71B5C22877453400100750 /* myHikesView.storyboard */,
+				9D71B5C6287748A500100750 /* MyHikesTableViewController.swift */,
+				9D71B5C8287748D600100750 /* myHikesViewModel.swift */,
+			);
+			path = MyHikesView;
+			sourceTree = "<group>";
+		};
+		9D71B5CA287748E700100750 /* MyHikesDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				9D71B5CB2877491100100750 /* myHikesDetail.storyboard */,
+				9D71B5CE2877494E00100750 /* myHikesDetailViewController.swift */,
+				9D71B5D02877496700100750 /* myHikesDetailViewModel.swift */,
+			);
+			path = MyHikesDetailView;
+			sourceTree = "<group>";
+		};
+		9D71B5D4287749D900100750 /* TrailDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				9D71B5D2287749CE00100750 /* trailsDetailView.storyboard */,
+				9D71B5D5287749FD00100750 /* TrailsDetailViewController.swift */,
+				9D71B5D728774A1600100750 /* TrailDetailViewModel.swift */,
+			);
+			path = TrailDetailView;
+			sourceTree = "<group>";
+		};
+		9D71B5D928774A1C00100750 /* TrailCreationView */ = {
+			isa = PBXGroup;
+			children = (
+				9D71B5DA28774A8500100750 /* trailCreation.storyboard */,
+				9D71B5DC28774AC100100750 /* TrailCreationViewController.swift */,
+				9D71B5DE28774B0400100750 /* TrailCreationViewModel.swift */,
+			);
+			path = TrailCreationView;
+			sourceTree = "<group>";
+		};
+		9D71B5E228774D6000100750 /* CurrentTrailDetail */ = {
+			isa = PBXGroup;
+			children = (
+				9D71B5E028774D4C00100750 /* trailTracking.storyboard */,
+				9D71B5E328774DB300100750 /* CurrentTrailTrackingViewController.swift */,
+				9D71B5E528774DD200100750 /* CurrentTrailTrackingViewModel.swift */,
+			);
+			path = CurrentTrailDetail;
+			sourceTree = "<group>";
+		};
+		9D71B5E72877625500100750 /* Helper Files */ = {
+			isa = PBXGroup;
+			children = (
+				9D71B5E82877627300100750 /* DateHelper.swift */,
+				9DAE1ECC287CC4EB00AE191A /* FirebaseService.swift */,
+			);
+			path = "Helper Files";
+			sourceTree = "<group>";
+		};
+		9D71B5EA2878006100100750 /* LaunchScreenSignIn */ = {
+			isa = PBXGroup;
+			children = (
+				9D71B5EB287800B900100750 /* SignInScreen.storyboard */,
+				9D71B5EE287800F000100750 /* SignInViewController.swift */,
+			);
+			path = LaunchScreenSignIn;
+			sourceTree = "<group>";
+		};
+		9D71B5F52878025500100750 /* CreateLogIn */ = {
+			isa = PBXGroup;
+			children = (
+				9D71B5F22878015C00100750 /* CreateLogIn.storyboard */,
+				9D71B5F6287802C100100750 /* CreateLogInViewController.swift */,
+			);
+			path = CreateLogIn;
 			sourceTree = "<group>";
 		};
 		9D7FACF12870B22800C51B9E /* Models */ = {
@@ -125,6 +264,7 @@
 		9DEC7ED62872858300D2D0A6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9D2F01F6287E3794005EEEED /* LaunchScreenCopy */,
 				9DEC7EDA2872864D00D2D0A6 /* SignInView */,
 				9DEC7ED9287285FF00D2D0A6 /* CellView */,
 				9DEC7ED8287285EE00D2D0A6 /* HikeView */,
@@ -136,7 +276,9 @@
 		9DEC7ED72872858C00D2D0A6 /* TrailView */ = {
 			isa = PBXGroup;
 			children = (
-				9D71B5B728761A9500100750 /* TrailHomePageViewController.swift */,
+				9D71B5E228774D6000100750 /* CurrentTrailDetail */,
+				9D71B5D928774A1C00100750 /* TrailCreationView */,
+				9D71B5D4287749D900100750 /* TrailDetailView */,
 			);
 			path = TrailView;
 			sourceTree = "<group>";
@@ -144,6 +286,8 @@
 		9DEC7ED8287285EE00D2D0A6 /* HikeView */ = {
 			isa = PBXGroup;
 			children = (
+				9D71B5CA287748E700100750 /* MyHikesDetailView */,
+				9D71B5C52877454900100750 /* MyHikesView */,
 			);
 			path = HikeView;
 			sourceTree = "<group>";
@@ -158,6 +302,8 @@
 		9DEC7EDA2872864D00D2D0A6 /* SignInView */ = {
 			isa = PBXGroup;
 			children = (
+				9D71B5F52878025500100750 /* CreateLogIn */,
+				9D71B5EA2878006100100750 /* LaunchScreenSignIn */,
 			);
 			path = SignInView;
 			sourceTree = "<group>";
@@ -178,6 +324,12 @@
 			dependencies = (
 			);
 			name = Summit;
+			packageProductDependencies = (
+				9DAE1EC2287C8D8D00AE191A /* FirebaseAuth */,
+				9DAE1EC4287C8D8D00AE191A /* FirebaseDatabase */,
+				9DAE1EC6287C8D8D00AE191A /* FirebaseFirestore */,
+				9DAE1EC8287C8D8D00AE191A /* FirebaseStorage */,
+			);
 			productName = Summit;
 			productReference = 9D12D3AA286F5BD30009018D /* Summit.app */;
 			productType = "com.apple.product-type.application";
@@ -206,6 +358,9 @@
 				Base,
 			);
 			mainGroup = 9D12D3A1286F5BD30009018D;
+			packageReferences = (
+				9DAE1EC1287C8D8D00AE191A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 9D12D3AB286F5BD30009018D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -221,10 +376,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D12D3BA286F5BD40009018D /* LaunchScreen.storyboard in Resources */,
-				9D71B5BF2876205600100750 /* Hikes.storyboard in Resources */,
+				9D71B5BF2876205600100750 /* TabBarController.storyboard in Resources */,
+				9D71B5F42878015C00100750 /* CreateLogIn.storyboard in Resources */,
+				9DAE1ECB287C8E6E00AE191A /* GoogleService-Info.plist in Resources */,
+				9D71B5C42877453400100750 /* myHikesView.storyboard in Resources */,
 				9D12D3B7286F5BD40009018D /* Assets.xcassets in Resources */,
+				9D71B5DB28774A8500100750 /* trailCreation.storyboard in Resources */,
+				9D71B5CD2877491100100750 /* myHikesDetail.storyboard in Resources */,
+				9D71B5ED287800B900100750 /* SignInScreen.storyboard in Resources */,
+				9D71B5E128774D4C00100750 /* trailTracking.storyboard in Resources */,
 				9D12D3B5286F5BD30009018D /* Main.storyboard in Resources */,
 				9D71B5C12876209D00100750 /* Trails.storyboard in Resources */,
+				9D71B5D3287749CE00100750 /* trailsDetailView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,12 +398,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D71B5DD28774AC100100750 /* TrailCreationViewController.swift in Sources */,
+				9D71B5F7287802C100100750 /* CreateLogInViewController.swift in Sources */,
+				9D71B5D828774A1600100750 /* TrailDetailViewModel.swift in Sources */,
+				9DAE1ECD287CC4EB00AE191A /* FirebaseService.swift in Sources */,
 				9D8BCAC528741CAE00F2B99A /* Hike.swift in Sources */,
-				9D71B5B828761A9500100750 /* TrailHomePageViewController.swift in Sources */,
 				9D12D3AE286F5BD30009018D /* AppDelegate.swift in Sources */,
+				9D71B5E428774DB300100750 /* CurrentTrailTrackingViewController.swift in Sources */,
+				9D71B5CF2877494E00100750 /* myHikesDetailViewController.swift in Sources */,
+				9D2F01F8287E37AF005EEEED /* LaunchScreenCopyViewController.swift in Sources */,
+				9D71B5D12877496700100750 /* myHikesDetailViewModel.swift in Sources */,
+				9D71B5EF287800F000100750 /* SignInViewController.swift in Sources */,
 				9D7FACF62870B27600C51B9E /* User.swift in Sources */,
 				9D7FACF82871011A00C51B9E /* Trail.swift in Sources */,
+				9D71B5E92877627300100750 /* DateHelper.swift in Sources */,
 				9D12D3B0286F5BD30009018D /* SceneDelegate.swift in Sources */,
+				9D71B5C7287748A500100750 /* MyHikesTableViewController.swift in Sources */,
+				9D71B5DF28774B0400100750 /* TrailCreationViewModel.swift in Sources */,
+				9D71B5D6287749FD00100750 /* TrailsDetailViewController.swift in Sources */,
+				9D71B5C9287748D600100750 /* myHikesViewModel.swift in Sources */,
+				9D71B5E628774DD200100750 /* CurrentTrailTrackingViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,12 +440,44 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		9D71B5BD2876205600100750 /* Hikes.storyboard */ = {
+		9D71B5BD2876205600100750 /* TabBarController.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				9D71B5BE2876205600100750 /* Base */,
 			);
-			name = Hikes.storyboard;
+			name = TabBarController.storyboard;
+			sourceTree = "<group>";
+		};
+		9D71B5C22877453400100750 /* myHikesView.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9D71B5C32877453400100750 /* Base */,
+			);
+			name = myHikesView.storyboard;
+			sourceTree = "<group>";
+		};
+		9D71B5CB2877491100100750 /* myHikesDetail.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9D71B5CC2877491100100750 /* Base */,
+			);
+			name = myHikesDetail.storyboard;
+			sourceTree = "<group>";
+		};
+		9D71B5EB287800B900100750 /* SignInScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9D71B5EC287800B900100750 /* Base */,
+			);
+			name = SignInScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		9D71B5F22878015C00100750 /* CreateLogIn.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9D71B5F32878015C00100750 /* Base */,
+			);
+			name = CreateLogIn.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -468,6 +677,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9DAE1EC1287C8D8D00AE191A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9DAE1EC2287C8D8D00AE191A /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9DAE1EC1287C8D8D00AE191A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		9DAE1EC4287C8D8D00AE191A /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9DAE1EC1287C8D8D00AE191A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		9DAE1EC6287C8D8D00AE191A /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9DAE1EC1287C8D8D00AE191A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		9DAE1EC8287C8D8D00AE191A /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9DAE1EC1287C8D8D00AE191A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9D12D3A2286F5BD30009018D /* Project object */;
 }

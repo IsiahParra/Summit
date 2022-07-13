@@ -1,13 +1,13 @@
 //
-//  TrailHomePageViewController.swift
+//  myHikesDetailViewController.swift
 //  Summit
 //
-//  Created by Isiah Parra on 7/6/22.
+//  Created by Isiah Parra on 7/7/22.
 //
 
 import UIKit
 
-class TrailHomePageViewController: UIViewController {
+class myHikesDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
