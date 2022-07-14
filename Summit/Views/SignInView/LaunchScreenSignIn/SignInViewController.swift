@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import FirebaseAuth
 import SwiftUI
 
 class SignInViewController: UIViewController {
@@ -14,66 +13,44 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var emailAddressTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    var viewModel: SignInViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        viewModel = SignInViewModel(delegate: self)
     }
-    let viewModel: SignInViewModel = SignInViewModel()
     
     
     @IBAction func createAccountTapped(_ sender: Any) {
-//        if emailAddressTextField.text?.isEmpty == true {
-//            print("No text entered in email text box")
-//            let alertController = UIAlertController(title: "Error has occured, Email text field empty", message: "Please enter a vaild Email", preferredStyle: .alert)
-//            let confirmAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-//            alertController.addAction(confirmAction)
-//            self.present(alertController, animated: true, completion: nil)
-//            return
-//        }
-//        if passwordTextField.text?.isEmpty == true {
-//            print("No text entered in password text box")
-//            let alertController = UIAlertController(title: "Error has occured, Password text field is empty", message: "Please enter a valid password", preferredStyle: .alert)
-//            let confirmAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-//            alertController.addAction(confirmAction)
-//            self.present(alertController, animated: true, completion: nil)
-//            return
-//        }
-//        guard let password = passwordTextField.text,
-//        let email = emailAddressTextField.text else { return }
-//        Auth.auth().createUser(withEmail: email, password: password) { result, error in
-//            let user = result?.user
-//            let id = user?.uid
+
         //TODO: The only thing this button should do is send you to the create account screen
             // Create coustom user model (initilize it)
             // write a func that saves User to firestore
         }
     @IBAction func signInButtonTapped(_ sender: Any) {
-        if let email = emailAddressTextField.text,
-           let password = passwordTextField.text {
-            
-            Auth.auth().signIn(withEmail: email, password: password) { result, error in
-                switch result {
-                case .none:
-                    let alertController = UIAlertController(title: "No account found", message: "Please check email and password", preferredStyle: .alert)
-                    let confirmAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-                    alertController.addAction(confirmAction)
-                    self.present(alertController, animated: true, completion: nil)
-                    
-                case .some(let userDetails):
-                    print("Welcome back!",userDetails.user.email!)
-                    
-                    let storyboard = UIStoryboard(name: "TabBarController", bundle: nil)
-                    guard let tabBarController = storyboard.instantiateViewController(withIdentifier: "TabBarMain") as? UITabBarController else { return }
-                    tabBarController.modalPresentationStyle = .overFullScreen
-                    self.emailAddressTextField.text = ""
-                    self.passwordTextField.text = ""
-                    self.emailAddressTextField.resignFirstResponder()
-                    self.passwordTextField.resignFirstResponder()
-                    self.present(tabBarController, animated: true)
-                }
-            }
+        if emailAddressTextField.text?.isEmpty == true {
+            print("No text entered in email text box")
+            let alertController = UIAlertController(title: "Error has occured, Email text field empty", message: "Please enter a vaild Email", preferredStyle: .alert)
+            let confirmAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            alertController.addAction(confirmAction)
+            self.present(alertController, animated: true, completion: nil)
+            return
+        }
+            // where my previous AUTH was
+        if passwordTextField.text?.isEmpty == true {
+            print("No text entered in password text box")
+            let alertController = UIAlertController(title: "Error has occured, Password text field is empty", message: "Please enter a valid password", preferredStyle: .alert)
+            let confirmAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            alertController.addAction(confirmAction)
+            self.present(alertController, animated: true, completion: nil)
+            return
+        }
+        guard let password = passwordTextField.text,
+              let email = emailAddressTextField.text else { return }
+        viewModel.signIn(with: email, password: password)
+        let storyboard = UIStoryboard(name: "TabBarController", bundle: nil)
+        guard let tabBarController = storyboard.instantiateViewController(withIdentifier: "TabBarMain") as? UITabBarController else { return }
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(viewController: tabBarController)
     }
     // TODO: need a Nonce
     
@@ -100,15 +77,42 @@ class SignInViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    }
-}
+    
+    }// end of class
+
 
 extension SignInViewController: SignInViewModelDelegate {
-    func presentAlertController() {
+    func presentAlertController(error: Error) {
         let alertController = UIAlertController(title: "No account found", message: "Please check email and password", preferredStyle: .alert)
         let confirmAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
         alertController.addAction(confirmAction)
         present(alertController, animated: true)
-        
+    }
+    
+    func userSignedIn() {
+        let storyboard = UIStoryboard(name: "TabBarController", bundle: nil)
+        guard let tabBarController = storyboard.instantiateViewController(withIdentifier: "TabBarMain") as? UITabBarController else { return }
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(viewController: tabBarController)
     }
 }
+//            Auth.auth().signIn(withEmail: email, password: password) { result, error in
+//                switch result {
+//                case .none:
+//                    let alertController = UIAlertController(title: "No account found", message: "Please check email and password", preferredStyle: .alert)
+//                    let confirmAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+//                    alertController.addAction(confirmAction)
+//                    self.present(alertController, animated: true, completion: nil)
+//
+//                case .some(let userDetails):
+//                    print("Welcome back!",userDetails.user.email!)
+//
+//                    let storyboard = UIStoryboard(name: "TabBarController", bundle: nil)
+//                    guard let tabBarController = storyboard.instantiateViewController(withIdentifier: "TabBarMain") as? UITabBarController else { return }
+//                    tabBarController.modalPresentationStyle = .overFullScreen
+//                    self.emailAddressTextField.text = ""
+//                    self.passwordTextField.text = ""
+//                    self.emailAddressTextField.resignFirstResponder()
+//                    self.passwordTextField.resignFirstResponder()
+//                    self.present(tabBarController, animated: true)
+//                }
+//            }

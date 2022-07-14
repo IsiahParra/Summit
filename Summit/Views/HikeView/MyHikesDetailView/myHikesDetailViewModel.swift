@@ -12,7 +12,7 @@ class MyHikesViewModel {
     init(hike: Hike? = nil) {
         self.hike = hike
     }
-    func updateHike(with name: String, location: String, entry: String, distance: Double, date: Date = Date(), completionTime: Double, rating: Int, imageURL:String?) {
+    func updateHike(with name: String, location: String, entry: String, distance: Double, date: Date = Date(), completionTime: Double, rating: Int, imageURL:URL?) {
         guard let hike = hike else { return }
     hike.hikeName = name
     hike.entry = entry

@@ -9,23 +9,26 @@ import Foundation
 import FirebaseAuth
 
 protocol SignInViewModelDelegate: AnyObject {
-    func presentAlertController()
+    func presentAlertController(error: Error)
+    func userSignedIn()
 }
 
 class SignInViewModel {
     private weak var delegate: SignInViewModelDelegate?
+    private let service: FirebaseSyncable
     
-    func signInAuth(with email: String, password: String) {
-        //TODO: abstract firebase code to firebase service
-        
-        Auth.auth().signIn(withEmail: email, password: password) { result, error in
+    init(service: FirebaseSyncable = FirebaseService(), delegate: SignInViewModelDelegate) {
+        self.delegate = delegate
+        self.service = service
+    }
+    
+    func signIn(with email: String, password: String) {
+        service.signIn(with: email, password: password) { result in
             switch result {
-            case .none:
-                self.delegate?.presentAlertController()
-                
-            case .some(let userDetails):
-                print("Welcome back!",userDetails.user.email!)
-                
+            case .success:
+                self.delegate?.userSignedIn()
+            case.failure(let error):
+                self.delegate?.presentAlertController(error: error)
                 let storyboard = UIStoryboard(name: "TabBarController", bundle: nil)
                 guard let tabBarController = storyboard.instantiateViewController(withIdentifier: "TabBarMain") as? UITabBarController else { return }
                 (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(viewController: tabBarController)

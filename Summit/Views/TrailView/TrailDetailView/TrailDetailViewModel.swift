@@ -14,7 +14,7 @@ class TrailDetailViewModel {
     init(trail: Trail? = nil) {
         self.trail = trail
     }
-    func updateTrail(with name: String, location: String, entry: String, distance: Double, date: Date = Date(), completionTime: Double, rating: Int, imageURL:String?) {
+    func updateTrail(with name: String, location: String, entry: String, distance: Double, date: Date = Date(), completionTime: Double, rating: Int, imageURL:URL?) {
         guard let trail = trail else { return }
         trail.trailName = name
         trail.entry = entry

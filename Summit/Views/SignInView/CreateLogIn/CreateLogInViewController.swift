@@ -6,16 +6,18 @@
 //
 
 import UIKit
-import FirebaseAuth
 
 class CreateLogInViewController: UIViewController {
 
     @IBOutlet weak var emailAddressTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    var viewModel: CreateLogInViewModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        viewModel = CreateLogInViewModel(delegate: self)
     }
     @IBAction func createAccountButtonTapped(_ sender: Any) {
         if emailAddressTextField.text?.isEmpty == true {
@@ -36,25 +38,7 @@ class CreateLogInViewController: UIViewController {
         }
         guard let password = passwordTextField.text,
         let email = emailAddressTextField.text else { return }
-        Auth.auth().createUser(withEmail: email, password: password) { result, error in
-            // check for successful result
-            switch result {
-            case.none:
-                let alertController = UIAlertController(title: "Unable to create account", message: "Please check email and password or recover your password.", preferredStyle: .alert)
-                let confirmAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-                alertController.addAction(confirmAction)
-                self.present(alertController, animated: true, completion: nil)
-            case .some(_):
-                let storyboard = UIStoryboard(name: "TabBarController", bundle: nil)
-                guard let tabBarController = storyboard.instantiateViewController(withIdentifier: "TabBarMain") as? UITabBarController else { return }
-                tabBarController.modalPresentationStyle = .overFullScreen
-                self.present(tabBarController, animated: true, completion: nil)
-                
-                let user = result?.user
-                UserDefaults.standard.set(user?.uid, forKey: "uid")
-                print(user?.uid)
-                
-            }
+        viewModel.createAccount(with: email, password: password)
     }
         
     // TODO: need an action for the "create Account" button tapped
@@ -80,5 +64,21 @@ class CreateLogInViewController: UIViewController {
     }
     */
 
+
+}// end of class
+
+extension CreateLogInViewController: CreateLogInViewModelDelegate {
+    func presentAlertController(error: Error) {
+        let alertController = UIAlertController(title: "Error", message: "(error.localizedDescription)", preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: "Close", style: .cancel))
+                present(alertController, animated: true)
+    }
+    
+    func userSignedIn() {
+        let storyboard = UIStoryboard(name: "TabBarController", bundle: nil)
+        guard let tabBarController = storyboard.instantiateViewController(withIdentifier: "TabBarMain") as? UITabBarController else { return }
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(viewController: tabBarController)
+    }
+    
 }
-}
+
