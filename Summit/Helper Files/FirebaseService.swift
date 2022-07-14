@@ -38,37 +38,64 @@ struct FirebaseService: FirebaseSyncable {
         
     }
     
+    
+    
+    
+    
+    func loadTrails(completion: @escaping (Result<[Trail], FirebaseError>) -> Void) {
+        reference.collection( Trail.Key.collectionType).getDocuments { snapshot, error in
+            if let error = error {
+                completion(.failure(FirebaseError.firebaseError(error)))
+            }
+            guard let data = snapshot?.documents else {
+                completion(.failure(.failedToUnwrapData))
+                return
+            }
+            // we have data now
+            let dataArray = data.compactMap({$0.data()})
+            // initalize a trails object from each value in the array
+            let trails = dataArray.compactMap({Trail.init(fromTrailDict: $0)})
+            completion(.success(trails))
+        }
+    }
+    
+    func deleteTrail(trail: Trail) {
+        reference.collection(Trail.Key.collectionType).document(trail.uuid).delete()
+    }
+    
+    func signIn(with user: User) {
+        <#code#>
+    }
+    
+    func createLogIn(with user: User) {
+        <#code#>
+    }
+    
     func save(hike: Hike) {
         <#code#>
     }
     
-
-
-
-    func loadTrails(completion: @escaping (Result<[Trail], FirebaseError>) -> Void) {
-        <#code#>
-    }
-
-    func deleteTrail(trail: Trail) {
-        <#code#>
-    }
-
-    func signIn(with user: User) {
-        <#code#>
-    }
-
-    func createLogIn(with user: User) {
-        <#code#>
-    }
-
     func loadHikes(completion: @escaping (Result<[Hike], FirebaseError>) -> Void) {
-        <#code#>
+        reference.collection(Hike.Key.collectionType).getDocuments { snapshot, error in
+            if let error = error {
+                completion(.failure(FirebaseError.firebaseError(error)))
+            }
+            guard let data = snapshot?.documents else {
+                completion(.failure(.failedToUnwrapData))
+                return
+            }
+            // we have data now
+            let dataArray = data.compactMap({$0.data()})
+            // initalize a trails object from each value in the array
+            let hike = dataArray.compactMap({Hike.init(fromTrailDict: $0)})
+            completion(.success(hike))
+        }
     }
-
+    
     func deleteHike(hike: Hike) {
-        <#code#>
+        reference.collection(Hike.Key.collectionType).document(hike.uuid).delete()
     }
-
+    
     func fetchImageHike(from hike: Hike, completion: @escaping (Result<UIImage, FirebaseError>) -> Void) {
         <#code#>
     }
@@ -76,16 +103,54 @@ struct FirebaseService: FirebaseSyncable {
     func fetchImageTrail(from trail: Trail, completion: @escaping (Result<UIImage, FirebaseError>) -> Void) {
         <#code#>
     }
-
+    
     func saveImageToTrail(_ image: UIImage, to trail: Trail, completion: @escaping () -> Void) {
-        <#code#>
+        guard let trailImageData = image.pngData() else { return }
+        storage.child("images").child(trail.uuid).putData(trailImageData, metadata: nil) {_, error in
+            if let error = error {
+                print(error.localizedDescription)
+                completion()
+                return
+            }
+            self.storage.child("images").child(trail.uuid).downloadURL { url, error in
+                if let error = error {
+                    print(error.localizedDescription)
+                    completion()
+                    return
+                }
+                guard let url = url else {
+                    return
+                }
+                trail.imageURL = url
+                completion()
+            }
+        }
     }
     
     func saveImageToHike(_ image: UIImage, to hike: Hike, completion: @escaping () -> Void) {
-        <#code#>
+        guard let hikeImageData = image.pngData() else { return }
+        storage.child("images").child(hike.uuid).putData(hikeImageData, metadata: nil) {_, error in
+            if let error = error {
+                print(error.localizedDescription)
+                completion()
+                return
+            }
+            self.storage.child("images").child(hike.uuid).downloadURL { url, error in
+                if let error = error {
+                    print(error.localizedDescription)
+                    completion()
+                    return
+                }
+                guard let url = url else {
+                    return
+                }
+                hike.imageURL = url
+                completion()
+            }
+        }
+        
     }
     
-
 }// end of class
 
 

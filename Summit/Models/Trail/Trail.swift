@@ -16,8 +16,8 @@ class Trail {
     var date: Date
     var distance: Double
     var entry: String
-    var id: String
-    var imageURL: String?
+    var uuid: String
+    var imageURL: URL?
     var completionTime: Double
     // not saved in firestore, it has to be fetched seperatly
     var image: UIImage?
@@ -29,10 +29,11 @@ enum Key {
     static let date = "date"
     static let distance = "distance"
     static let entry = "entry"
-    static let id = "id"
+    static let uuid = "uuid"
     static let image = "image"
     static let imageURL = "imageURL"
     static let completionTime = "completionTime"
+    static let collectionType = "trails"
 
   }
    // Dictionary representation
@@ -43,18 +44,18 @@ enum Key {
          Key.date : self.date.timeIntervalSince1970,
          Key.distance : self.distance,
          Key.entry : self.entry,
-         Key.id : self.id,
+         Key.uuid : self.uuid,
          Key.imageURL : self.imageURL,
          Key.completionTime : self.completionTime]
     }
-    init(trailName: String, location: String, rating: Int, date: Date = Date(), distance: Double, entry: String, id: String, image: UIImage?, imageURL: String?, completionTime: Double) {
+    init(trailName: String, location: String, rating: Int, date: Date = Date(), distance: Double, entry: String, uuid: String, image: UIImage?, imageURL: URL?, completionTime: Double) {
         self.trailName = trailName
         self.location = location
         self.rating = rating
         self.date = date
         self.distance = distance
         self.entry = entry
-        self.id = id
+        self.uuid = uuid
         self.image = image
         self.imageURL = imageURL
         self.completionTime = completionTime
@@ -66,10 +67,10 @@ enum Key {
               let date = dictionary[Key.date] as? Double,
               let distance = dictionary[Key.distance] as? Double,
               let entry = dictionary[Key.entry] as? String,
-              let id = dictionary[Key.id] as? String,
-              let imageURL = dictionary[Key.imageURL] as? String,
+              let uuid = dictionary[Key.uuid] as? String,
+              let imageURL = dictionary[Key.imageURL] as? URL,
               let completionTime = dictionary[Key.completionTime] as? Double
         else {return nil}
-        self.init(trailName: trailName, location: location, rating: rating, date: Date(timeIntervalSince1970: date), distance: distance, entry: entry, id: id, image: nil, imageURL: imageURL, completionTime: completionTime) //image nil for now.
+        self.init(trailName: trailName, location: location, rating: rating, date: Date(timeIntervalSince1970: date), distance: distance, entry: entry, uuid: uuid, image: nil, imageURL: imageURL, completionTime: completionTime) //image nil for now.
     }
 }
