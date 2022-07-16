@@ -40,19 +40,6 @@ class CreateLogInViewController: UIViewController {
         let email = emailAddressTextField.text else { return }
         viewModel.createAccount(with: email, password: password)
     }
-        
-    // TODO: need an action for the "create Account" button tapped
-    // need to make sure neither fields are empty and if they are do an alert controller to let the user know that its empty
-    // calls the sign up function
-    
-    // TODO: Create a sign up function
-    // this is the function that creates a user in firebase call Auth.auth().createUser(with email, and password)
-    // set UID
-    // Send to homeScreen or change view to homescreen
-    
-    //TODO: Password validation
-    // how many characters and symbols i can use and follow firebase password rules of no spaces and minimum 6 characters
-    
 
     /*
     // MARK: - Navigation

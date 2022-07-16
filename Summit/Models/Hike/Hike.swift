@@ -38,7 +38,7 @@ enum Key {
     static let uuid = "uuid"
 
   }
-    var trailData: [String:AnyHashable] {
+    var hikeData: [String:AnyHashable] {
         [Key.hikeName : self.hikeName,
          Key.location : self.location,
          Key.rating : self.rating,

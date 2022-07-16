@@ -17,12 +17,13 @@ enum FirebaseError: Error {
     case noDataFound
 }
 protocol FirebaseSyncable {
-    func save(trail: Trail)
+    func save(trail: Trail, with image: UIImage)
     func loadTrails(completion: @escaping (Result<[Trail], FirebaseError>) -> Void)
     func deleteTrail(trail: Trail)
     func signIn(with email: String, password: String, completion: @escaping (Result<Bool, FirebaseError>) -> Void)
     func createAccount(with email: String, password: String, completion: @escaping (Result<Bool, FirebaseError>) -> Void )
-    func save(hike: Hike)
+    func createTrail( with trail: Trail, completion: @escaping (Result<Trail, FirebaseError>) -> Void)
+    func save(hike: Hike, with image: UIImage)
     func loadHikes(completion: @escaping (Result<[Hike], FirebaseError>) -> Void)
     func deleteHike( hike: Hike)
     func fetchImageHike( from hike: Hike, completion: @escaping (Result<UIImage, FirebaseError>) -> Void)
@@ -30,13 +31,39 @@ protocol FirebaseSyncable {
     func saveImageToTrail(_ image: UIImage, to trail: Trail, completion: @escaping () -> Void)
     func saveImageToHike(_ image: UIImage, to hike: Hike, completion: @escaping () -> Void)
     func signOut(With user: User)
+    func signInWithApple( token: String, nonce: String)
 }
 struct FirebaseService: FirebaseSyncable {
     
     let reference = Firestore.firestore()
     let storage = Storage.storage().reference()
     
-    func save(trail: Trail) {
+    func signInWithApple(token: String, nonce: String) {
+        
+    }
+    
+    
+    //TODO: ASk about the createTrail func
+    
+        func createTrail(with trail: Trail, completion: @escaping (Result<Trail, FirebaseError>) -> Void) {
+    //        reference.collection(Trail.Key.collectionType).getDocuments { trailsnapshot, error in
+    //            if let error = error {
+    //                completion(.failure(.firebaseError(error)))
+    //            }
+    //            guard let data = trailsnapshot?.documents else {
+    //                completion(.failure(.failedToUnwrapData))
+    //                return
+    //            }
+    //            let trailData = data.compactMap({ $0.data })
+    //            let trails = trailData.compactMap({Trail.init(fromTrailDict: $0)})
+    //            completion(.success(trails))
+    //        }
+       }
+    
+    func save(trail: Trail, with image: UIImage) {
+        saveImageToTrail(image, to: trail) {
+            reference.collection(Trail.Key.collectionType).document(trail.uuid).setData(trail.trailData)
+        }
         
     }
     func saveImageToTrail(_ image: UIImage, to trail: Trail, completion: @escaping () -> Void) {
@@ -63,7 +90,19 @@ struct FirebaseService: FirebaseSyncable {
     }
     
     func fetchImageTrail(from trail: Trail, completion: @escaping (Result<UIImage, FirebaseError>) -> Void) {
-        
+        storage.child("images").child(trail.uuid).getData(maxSize: 1024 * 1024) { result in
+            switch result {
+            case .success(let data):
+                guard let imageTrail = UIImage(data: data) else {
+                    completion(.failure(.failedToUnwrapData))
+                    return
+                }
+                completion(.success(imageTrail))
+                
+            case .failure(let error):
+                completion(.failure(.firebaseError(error)))
+            }
+        }
     }
 
     func loadTrails(completion: @escaping (Result<[Trail], FirebaseError>) -> Void) {
@@ -120,7 +159,10 @@ struct FirebaseService: FirebaseSyncable {
         }
     }
     
-    func save(hike: Hike) {
+    func save(hike: Hike, with image: UIImage) {
+        saveImageToHike(image, to: hike) {
+            reference.collection(Hike.Key.collectionType).document(hike.uuid).setData(hike.hikeData)
+        }
         
     }
 
@@ -146,7 +188,18 @@ struct FirebaseService: FirebaseSyncable {
     }
 
     func fetchImageHike(from hike: Hike, completion: @escaping (Result<UIImage, FirebaseError>) -> Void) {
-        
+        storage.child("images").child(hike.uuid).getData(maxSize: 1024 * 1024) { result in
+            switch result {
+            case .success(let data):
+                guard let imageHike = UIImage(data: data) else {
+                    completion(.failure(.failedToUnwrapData))
+                    return
+                }
+                completion(.success(imageHike))
+            case.failure(let error):
+                completion(.failure(.firebaseError(error)))
+            }
+        }
     }
     
 

@@ -91,7 +91,9 @@
         <scene sceneID="KEE-SP-nM3">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AZ8-Z4-olT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="icons8-trail-50" id="wYV-KA-2xO"/>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hfn-Da-9do">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -106,4 +108,7 @@
             <point key="canvasLocation" x="-2686" y="2577"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icons8-trail-50" width="50" height="50"/>
+    </resources>
 </document>

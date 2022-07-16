@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Q1h-bY-IVc">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,14 +12,14 @@
             <objects>
                 <viewController storyboardIdentifier="CreateAccountScreen" modalPresentationStyle="fullScreen" id="Q1h-bY-IVc" customClass="CreateLogInViewController" customModule="Summit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NzE-Ka-CPe">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="66" translatesAutoresizingMaskIntoConstraints="NO" id="X9r-pH-cmD">
-                                <rect key="frame" x="100" y="210" width="214" height="154"/>
+                                <rect key="frame" x="100" y="207" width="190" height="154"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Email.." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WmQ-Ee-YpH">
-                                        <rect key="frame" x="0.0" y="0.0" width="214" height="44"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="190" height="44"/>
                                         <color key="backgroundColor" red="0.97693614890000002" green="1" blue="0.79023422519999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="A6d-ZT-WLY"/>
@@ -28,7 +28,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Password..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CgL-C1-fTu">
-                                        <rect key="frame" x="0.0" y="110" width="214" height="44"/>
+                                        <rect key="frame" x="0.0" y="110" width="190" height="44"/>
                                         <color key="backgroundColor" red="0.97693614890000002" green="1" blue="0.79023422519999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="XnP-lF-mKs"/>
@@ -39,39 +39,39 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DX6-Jx-Ej4">
-                                <rect key="frame" x="120" y="434" width="174" height="44"/>
+                                <rect key="frame" x="120" y="431" width="150" height="44"/>
+                                <color key="backgroundColor" red="0.94759276459999997" green="0.7747266773" blue="0.55337034519999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="kee-Xm-52s"/>
                                 </constraints>
-                                <color key="tintColor" red="1" green="0.70894551159999997" blue="0.63542002580000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Create Account">
-                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Create Account">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="createAccountButtonTapped:" destination="Q1h-bY-IVc" eventType="touchUpInside" id="ANm-5G-SAG"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start tracking your hikes!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fE3-kP-bjT">
-                                <rect key="frame" x="74" y="84" width="266" height="33"/>
+                                <rect key="frame" x="60" y="84" width="270" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eQU-Ee-ZcQ"/>
-                        <color key="backgroundColor" red="1" green="0.88274361690000003" blue="0.69046114979999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.46014283255006605" green="0.61151164250830969" blue="0.68266752577319589" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="fE3-kP-bjT" firstAttribute="top" secondItem="eQU-Ee-ZcQ" secondAttribute="top" constant="40" id="0so-ms-VTQ"/>
                             <constraint firstItem="X9r-pH-cmD" firstAttribute="top" secondItem="fE3-kP-bjT" secondAttribute="bottom" constant="93" id="Dx6-X5-g4k"/>
                             <constraint firstItem="X9r-pH-cmD" firstAttribute="leading" secondItem="eQU-Ee-ZcQ" secondAttribute="leading" constant="100" id="I7H-Yt-oVb"/>
                             <constraint firstItem="DX6-Jx-Ej4" firstAttribute="leading" secondItem="eQU-Ee-ZcQ" secondAttribute="leading" constant="120" id="Y5H-7j-DXe"/>
-                            <constraint firstItem="fE3-kP-bjT" firstAttribute="leading" secondItem="eQU-Ee-ZcQ" secondAttribute="leading" constant="74" id="ZGw-Tf-Agu"/>
+                            <constraint firstItem="fE3-kP-bjT" firstAttribute="leading" secondItem="eQU-Ee-ZcQ" secondAttribute="leading" constant="60" id="ZGw-Tf-Agu"/>
                             <constraint firstItem="DX6-Jx-Ej4" firstAttribute="top" secondItem="X9r-pH-cmD" secondAttribute="bottom" constant="70" id="ZN5-Me-CDz"/>
                             <constraint firstItem="eQU-Ee-ZcQ" firstAttribute="trailing" secondItem="DX6-Jx-Ej4" secondAttribute="trailing" constant="120" id="aTY-Lq-ijn"/>
                             <constraint firstItem="eQU-Ee-ZcQ" firstAttribute="trailing" secondItem="X9r-pH-cmD" secondAttribute="trailing" constant="100" id="hlA-zL-O8E"/>
-                            <constraint firstItem="eQU-Ee-ZcQ" firstAttribute="bottom" secondItem="DX6-Jx-Ej4" secondAttribute="bottom" constant="384" id="kI1-KA-Kbx"/>
-                            <constraint firstItem="eQU-Ee-ZcQ" firstAttribute="trailing" secondItem="fE3-kP-bjT" secondAttribute="trailing" constant="74" id="r2K-e0-djf"/>
+                            <constraint firstItem="eQU-Ee-ZcQ" firstAttribute="trailing" secondItem="fE3-kP-bjT" secondAttribute="trailing" constant="60" id="r2K-e0-djf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Create New Account" largeTitleDisplayMode="always" id="Lw9-7S-lIT"/>
@@ -84,5 +84,39 @@
             </objects>
             <point key="canvasLocation" x="2275.36231884058" y="-16.071428571428569"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Jwj-6T-JaT">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iFf-Is-wi0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="2nQ-ZM-7vg" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NyU-f0-HIe">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Nature-Mountain-Lake-Reflection-iphone" translatesAutoresizingMaskIntoConstraints="NO" id="JNM-h5-cYh">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" spacing="66" translatesAutoresizingMaskIntoConstraints="NO" id="mGK-Th-8EY">
+                                <rect key="frame" x="10" y="54" width="135" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="DLs-WR-xij"/>
+                        <color key="backgroundColor" red="0.40505790530000002" green="0.60568753669999997" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DLs-WR-xij" firstAttribute="bottom" secondItem="JNM-h5-cYh" secondAttribute="bottom" id="MNt-c0-Woi"/>
+                            <constraint firstItem="DLs-WR-xij" firstAttribute="trailing" secondItem="JNM-h5-cYh" secondAttribute="trailing" id="aeQ-zv-7mU"/>
+                            <constraint firstItem="JNM-h5-cYh" firstAttribute="top" secondItem="DLs-WR-xij" secondAttribute="top" id="o8v-ce-Ty4"/>
+                            <constraint firstItem="JNM-h5-cYh" firstAttribute="leading" secondItem="DLs-WR-xij" secondAttribute="leading" id="r7r-Zb-Zgl"/>
+                        </constraints>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="3270.7692307692305" y="44.7867298578199"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="Nature-Mountain-Lake-Reflection-iphone" width="640" height="1136"/>
+    </resources>
 </document>

@@ -10,38 +10,21 @@
         <scene sceneID="kc0-V3-uSJ">
             <objects>
                 <tabBarController storyboardIdentifier="TabBarMain" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Aav-hf-Bwf" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jY8-sU-7QM">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="jY8-sU-7QM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.94759276459999997" green="0.7747266773" blue="0.55337034519999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="8ys-FD-sKD" kind="relationship" relationship="viewControllers" id="Rul-sw-TyA"/>
                         <segue destination="g5c-J4-ack" kind="relationship" relationship="viewControllers" id="WGm-Gt-PqX"/>
+                        <segue destination="cTb-Nz-9dl" kind="relationship" relationship="viewControllers" id="c9j-aY-JRN"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rVR-SR-C38" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2364" y="631"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="jpY-Um-KfY">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8ys-FD-sKD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="icons8-boots-50" id="tA9-Tk-690"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tKN-Id-H3a">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="cTb-Nz-9dl" kind="relationship" relationship="rootViewController" id="liE-W1-t1e"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ke1-36-FrC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3209" y="1428"/>
         </scene>
         <!--Trails-->
         <scene sceneID="K3f-sZ-jeK">
@@ -51,17 +34,20 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y1U-zK-hre" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1647" y="1081"/>
+            <point key="canvasLocation" x="-3294" y="1064"/>
         </scene>
         <!--myHikesView-->
         <scene sceneID="cIx-he-Q1p">
             <objects>
                 <viewControllerPlaceholder storyboardName="myHikesView" id="cTb-Nz-9dl" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="icons8-boots-50" id="WJ3-iD-K3K">
+                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" id="dTL-kB-dbY"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ekG-Vt-8De" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2946" y="1910"/>
+            <point key="canvasLocation" x="-1538" y="1063"/>
         </scene>
     </scenes>
     <resources>
