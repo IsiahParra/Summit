@@ -17,7 +17,7 @@ class CurrentTrailTrackingViewModel {
         self.trail = trail
         self.locationServices = locationServices
     }
-    func trackTrail(with distance: Double, location: String, completionTime: Double) {
+    func trackTrail(with distance: String, location: String, completionTime: Double) {
         guard let trail = trail else { return }
         trail.distance = distance
         trail.location = location

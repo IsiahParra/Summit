@@ -9,6 +9,7 @@ import UIKit
 
 class TrailListTableViewController: UITableViewController {
 
+//    private let viewModel = Trail
     override func viewDidLoad() {
         super.viewDidLoad()
 

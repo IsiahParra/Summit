@@ -22,7 +22,7 @@ class TrailDetailViewModel {
         self.service = service
         self.delegate = delegate
     }
-    func updateTrail(with name: String, location: String, entry: String, distance: Double, rating: Int, imageURL:URL?) {
+    func updateTrail(with name: String, location: String, entry: String, distance: String, rating: Int, imageURL:URL?) {
         guard let trail = trail else { return }
         trail.trailName = name
         trail.entry = entry

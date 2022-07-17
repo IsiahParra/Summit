@@ -12,6 +12,7 @@ import AuthenticationServices
 
 class SignInViewController: UIViewController {
     
+    @IBOutlet weak var buttonsStackView: UIStackView!
     @IBOutlet weak var emailAddressTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
@@ -20,6 +21,7 @@ class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = SignInViewModel(delegate: self)
+        setUpSignInWithAppleProvider()
     }
     
     
@@ -54,10 +56,38 @@ class SignInViewController: UIViewController {
         guard let tabBarController = storyboard.instantiateViewController(withIdentifier: "TabBarMain") as? UITabBarController else { return }
         (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(viewController: tabBarController)
     }
-    @IBAction func signInWithAppleTapped(_ sender: Any) {
-        
+ 
+    
+    func setUpSignInWithAppleProvider() {
+        let authorizationButton = ASAuthorizationAppleIDButton()
+        authorizationButton.addTarget(self, action: #selector(handleAuthorizationAppleIDButtonPress), for: .touchUpInside)
+        buttonsStackView.insertArrangedSubview(authorizationButton, at: 1)
     }
     
+    func performExistingAccountSetupFlows() {
+        // Prepare requests for both Apple ID and password providers.
+        let requests = [ASAuthorizationAppleIDProvider().createRequest(),
+                        ASAuthorizationPasswordProvider().createRequest()]
+        
+        // Create an authorization controller with the given requests.
+        let authorizationController = ASAuthorizationController(authorizationRequests: requests)
+        authorizationController.delegate = self
+        authorizationController.presentationContextProvider = self
+        authorizationController.performRequests()
+    }
+    
+    /// - Tag: perform_appleid_request
+    @objc
+    func handleAuthorizationAppleIDButtonPress() {
+        let appleIDProvider = ASAuthorizationAppleIDProvider()
+        let request = appleIDProvider.createRequest()
+        request.requestedScopes = [.fullName, .email]
+        
+        let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+        authorizationController.delegate = self
+        authorizationController.presentationContextProvider = self
+        authorizationController.performRequests()
+    }
   
     // TODO: need a Nonce
     
@@ -123,6 +153,9 @@ extension SignInViewController: ASAuthorizationControllerDelegate, ASAuthorizati
             }
             viewModel.signInWithApple(token: idTokenString, nonce: nonce)
         }
+    }
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        print(error)
     }
 }
 

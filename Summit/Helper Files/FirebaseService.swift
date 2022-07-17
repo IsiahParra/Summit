@@ -17,7 +17,7 @@ enum FirebaseError: Error {
     case noDataFound
 }
 protocol FirebaseSyncable {
-    func save(trail: Trail, with image: UIImage)
+    func save(trail: Trail, with image: UIImage?, completion: @escaping (Result<Void, Error>) -> Void)
     func loadTrails(completion: @escaping (Result<[Trail], FirebaseError>) -> Void)
     func deleteTrail(trail: Trail)
     func signIn(with email: String, password: String, completion: @escaping (Result<Bool, FirebaseError>) -> Void)
@@ -28,7 +28,7 @@ protocol FirebaseSyncable {
     func deleteHike( hike: Hike)
     func fetchImageHike( from hike: Hike, completion: @escaping (Result<UIImage, FirebaseError>) -> Void)
     func fetchImageTrail( from trail: Trail, completion: @escaping (Result<UIImage, FirebaseError>) -> Void)
-    func saveImageToTrail(_ image: UIImage, to trail: Trail, completion: @escaping () -> Void)
+//    func saveImageToTrail(_ image: UIImage, to trail: Trail, completion: @escaping () -> Void)
     func saveImageToHike(_ image: UIImage, to hike: Hike, completion: @escaping () -> Void)
     func signOut(With user: User)
     func signInWithApple( token: String, nonce: String)
@@ -60,13 +60,17 @@ struct FirebaseService: FirebaseSyncable {
     //        }
        }
     
-    func save(trail: Trail, with image: UIImage) {
-        saveImageToTrail(image, to: trail) {
-            reference.collection(Trail.Key.collectionType).document(trail.uuid).setData(trail.trailData)
-        }
-        
+    func save(trail: Trail, with image: UIImage?, completion: @escaping (Result<Void, Error>) -> Void) {
+//        if let image = image {
+//            // save the image to storage
+//
+//        }
+//        saveImageToTrail(image, to: trail) {
+//            reference.collection(Trail.Key.collectionType).document(trail.uuid).setData(trail.trailData)
+//        }
+        saveTrailToFirestore(trail: trail, completion: completion)
     }
-    func saveImageToTrail(_ image: UIImage, to trail: Trail, completion: @escaping () -> Void) {
+   private func saveImageToTrail(_ image: UIImage, to trail: Trail, completion: @escaping () -> Void) {
         guard let trailImageData = image.pngData() else { return }
         storage.child("images").child(trail.uuid).putData(trailImageData, metadata: nil) {_, error in
             if let error = error {
@@ -74,19 +78,30 @@ struct FirebaseService: FirebaseSyncable {
                 completion()
                 return
             }
-            self.storage.child("images").child(trail.uuid).downloadURL { url, error in
-                if let error = error {
-                    print(error.localizedDescription)
-                    completion()
-                    return
-                }
-                guard let url = url else {
-                    return
-                }
-                trail.imageURL = url
-                completion()
+//            self.storage.child("images").child(trail.uuid).downloadURL { url, error in
+//                if let error = error {
+//                    print(error.localizedDescription)
+//                    completion()
+//                    return
+//                }
+//                guard let url = url else {
+//                    return
+//                }
+//                trail.imageURL = url
+//                completion()
+//            }
+        }
+    }
+    
+    private func saveTrailToFirestore(trail: Trail, completion: @escaping (Result<Void, Error>) -> Void) {
+        reference.collection(Trail.Key.collectionType).document(trail.uuid).setData(trail.trailData) { error in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(()))
             }
         }
+//        reference.collection(Trail.Key.collectionType).addDocument(data: trail.trailData)
     }
     
     func fetchImageTrail(from trail: Trail, completion: @escaping (Result<UIImage, FirebaseError>) -> Void) {

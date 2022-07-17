@@ -13,8 +13,8 @@ class LaunchScreenCopyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        try! Auth.auth().signOut()
-        print("")
+//        try! Auth.auth().signOut()
+//        print("")
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
