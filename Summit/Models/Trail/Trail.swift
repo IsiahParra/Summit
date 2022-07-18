@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class Trail {
+struct Trail {
     //properties
     var trailName: String
     var location: String
@@ -50,14 +50,14 @@ enum Key {
         self.image = image
         self.imageURL = imageURL
     }
-    convenience init?(fromTrailDict dictionary: [String:Any]) {
+    init?(fromTrailDict dictionary: [String:Any]) {
         guard let trailName = dictionary[Key.trailName] as? String,
               let location = dictionary[Key.location] as? String,
               let distance = dictionary[Key.distance] as? String,
               let entry = dictionary[Key.entry] as? String,
-              let uuid = dictionary[Key.uuid] as? String,
-              let imageURL = dictionary[Key.imageURL] as? URL
+              let uuid = dictionary[Key.uuid] as? String
+//              let imageURL = dictionary[Key.imageURL] as? URL
         else {return nil}
-        self.init(trailName: trailName, location: location,distance: distance, entry: entry, uuid: uuid, image: nil, imageURL: imageURL) //image nil for now.
+        self.init(trailName: trailName, location: location,distance: distance, entry: entry, uuid: uuid, image: nil, imageURL: nil) //image nil for now.
     }
 }

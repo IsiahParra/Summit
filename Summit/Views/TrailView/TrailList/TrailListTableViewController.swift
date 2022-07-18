@@ -9,38 +9,34 @@ import UIKit
 
 class TrailListTableViewController: UITableViewController {
 
-//    private let viewModel = Trail
+    private var viewModel: TrailListViewModel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.viewModel = TrailListViewModel(delegate: self)
     }
 
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return viewModel.trails.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "trailListCell", for: indexPath) as? TrailListTableViewCell else {
+            return UITableViewCell()
+        }
+        let trail = viewModel.trails[indexPath.row]
+        cell.configure(with: trail.trailName, image: nil) //figure out how to get the image out of fire storage
+        
 
         // Configure the cell...
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -87,4 +83,10 @@ class TrailListTableViewController: UITableViewController {
     }
     */
 
+}
+
+extension TrailListTableViewController: TrailListViewModelDelegate {
+    func fetchedTrailsSuccessfully() {
+        tableView.reloadData()
+    }
 }

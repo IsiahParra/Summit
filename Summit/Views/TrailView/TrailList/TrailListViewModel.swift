@@ -7,9 +7,33 @@
 
 import Foundation
 
-class trailListViewModel {
+protocol TrailListViewModelDelegate: AnyObject {
+   func fetchedTrailsSuccessfully()
+}
+class TrailListViewModel {
     
+    var trails: [Trail] = []
+    private let service: FirebaseSyncable 
+    private weak var delegate: TrailListViewModelDelegate?
     
+    init(service: FirebaseSyncable = FirebaseService(), delegate: TrailListViewModelDelegate) {
+        self.service = service
+        self.delegate = delegate
+        fetchTrails()
+    }
+    
+    func fetchTrails() {
+//        service.loadTrails(completion: completion)
+        service.loadTrails { result in
+            switch result {
+            case .success(let trails):
+                self.trails = trails
+                self.delegate?.fetchedTrailsSuccessfully()
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
     
 }// end of class
 

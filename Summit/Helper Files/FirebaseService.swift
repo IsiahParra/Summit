@@ -132,8 +132,9 @@ struct FirebaseService: FirebaseSyncable {
             // we have data now
             let dataArray = data.compactMap({$0.data()})
             // initalize a trails object from each value in the array
-            let trails = dataArray.compactMap({Trail.init(fromTrailDict: $0)})
+            let trails = dataArray.compactMap({Trail(fromTrailDict: $0)})
             completion(.success(trails))
+            //why can i only get 0 values when passing the dataArray?
         }
     }
 

@@ -37,11 +37,11 @@ class TrailCreationViewModel {
         guard let trail = trail else {
             return
         }
-        trail.trailName = name
-        trail.entry = entry
-        trail.location = location
-        trail.image = image
-        trail.distance = distance
+//        trail.trailName = name
+//        trail.entry = entry
+//        trail.location = location
+//        trail.image = image
+//        trail.distance = distance
 //        service.save(trail: trail, with: image)
     }
     

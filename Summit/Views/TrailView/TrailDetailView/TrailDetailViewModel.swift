@@ -24,11 +24,11 @@ class TrailDetailViewModel {
     }
     func updateTrail(with name: String, location: String, entry: String, distance: String, rating: Int, imageURL:URL?) {
         guard let trail = trail else { return }
-        trail.trailName = name
-        trail.entry = entry
-        trail.location = location
-        trail.distance = distance
-        trail.imageURL = imageURL
+//        trail.trailName = name
+//        trail.entry = entry
+//        trail.location = location
+//        trail.distance = distance
+//        trail.imageURL = imageURL
     }
     
     func loadTrails() {

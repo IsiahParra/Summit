@@ -29,13 +29,13 @@
         <!--Welcome to your Trails List-->
         <scene sceneID="Wd9-Xw-rVF">
             <objects>
-                <tableViewController id="X51-vD-dFl" sceneMemberID="viewController">
+                <tableViewController id="X51-vD-dFl" customClass="TrailListTableViewController" customModule="Summit" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="x0k-M9-9Hc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="0.88274361690000003" blue="0.69046114979999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="162" id="4Iq-2g-mZt">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="trailListCell" rowHeight="162" id="4Iq-2g-mZt" customClass="TrailListTableViewCell" customModule="Summit" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="162"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4Iq-2g-mZt" id="emu-Qc-ONN">
@@ -66,6 +66,8 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.94759276459999997" green="0.7747266773" blue="0.55337034519999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
+                                    <outlet property="trailListImageView" destination="taV-uY-ufK" id="Xog-Sr-3eM"/>
+                                    <outlet property="trailNameLabel" destination="pjU-CT-k0e" id="BpS-0n-VDr"/>
                                     <segue destination="xNZ-6p-12t" kind="show" id="5FA-H6-I8r"/>
                                 </connections>
                             </tableViewCell>
