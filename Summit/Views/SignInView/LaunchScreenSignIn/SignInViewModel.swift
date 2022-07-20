@@ -81,4 +81,17 @@ class SignInViewModel {
         return hashString
     }
     private(set) var currentNonce: String?
+    
+    func startSigningInWithAppleFlow(delegate: ASAuthorizationControllerDelegate, presentationProvider: ASAuthorizationControllerPresentationContextProviding) {
+        let nonce = randomNonceString()
+        currentNonce = nonce
+        let appleIDProvider = ASAuthorizationAppleIDProvider()
+        let request = appleIDProvider.createRequest()
+        request.requestedScopes = [.fullName, .email]
+        
+        let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+        authorizationController.delegate = delegate
+        authorizationController.presentationContextProvider = presentationProvider
+        authorizationController.performRequests()
+    }
 }

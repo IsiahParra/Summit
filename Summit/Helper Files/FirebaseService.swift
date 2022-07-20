@@ -38,26 +38,35 @@ struct FirebaseService: FirebaseSyncable {
     let reference = Firestore.firestore()
     let storage = Storage.storage().reference()
     
+    
     func signInWithApple(token: String, nonce: String) {
+        let credentials = OAuthProvider.credential(withProviderID: "apple.com", idToken: token, rawNonce: nonce)
         
+        Auth.auth().signIn(with: credentials) { authResult, error in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            print("made it this far")
+        }
     }
     
     
     //TODO: ASk about the createTrail func
     
         func createTrail(with trail: Trail, completion: @escaping (Result<Trail, FirebaseError>) -> Void) {
-    //        reference.collection(Trail.Key.collectionType).getDocuments { trailsnapshot, error in
-    //            if let error = error {
-    //                completion(.failure(.firebaseError(error)))
-    //            }
-    //            guard let data = trailsnapshot?.documents else {
-    //                completion(.failure(.failedToUnwrapData))
-    //                return
-    //            }
-    //            let trailData = data.compactMap({ $0.data })
-    //            let trails = trailData.compactMap({Trail.init(fromTrailDict: $0)})
-    //            completion(.success(trails))
-    //        }
+//            reference.collection(Trail.Key.collectionType).getDocuments { trailsnapshot, error in
+//                if let error = error {
+//                    completion(.failure(.firebaseError(error)))
+//                }
+//                guard let data = trailsnapshot?.documents else {
+//                    completion(.failure(.failedToUnwrapData))
+//                    return
+//                }
+//                let trailData = data.compactMap({ $0. })
+//                let trails = trailData.compactMap({Trail.init(fromTrailDict: $0)})
+//                completion(.success(trails))
+//            }
        }
     
     func save(trail: Trail, with image: UIImage?, completion: @escaping (Result<Void, Error>) -> Void) {

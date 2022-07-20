@@ -68,7 +68,7 @@
                                 <connections>
                                     <outlet property="trailListImageView" destination="taV-uY-ufK" id="Xog-Sr-3eM"/>
                                     <outlet property="trailNameLabel" destination="pjU-CT-k0e" id="BpS-0n-VDr"/>
-                                    <segue destination="xNZ-6p-12t" kind="show" id="5FA-H6-I8r"/>
+                                    <segue destination="xNZ-6p-12t" kind="show" identifier="toDetailVC" id="5FA-H6-I8r"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

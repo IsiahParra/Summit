@@ -35,6 +35,12 @@ class TrailListViewModel {
         }
     }
     
+    func delete(index: Int) {
+        let trail = trails[index]
+        trails.remove(at: index)
+        service.deleteTrail(trail: trail)
+    }
+    
 }// end of class
 
 // fetch trails creations

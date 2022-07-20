@@ -11,15 +11,14 @@ import UIKit
 class Hike {
     var hikeName: String
     var location: String
-    var rating: Int
-    var date: Date
-    var distance: Double
-    var entry: String
+    var rating: Int?
+    var timeStamp: Date
+    var distance: String
     var trailID: String
     var userID: String
     var imageURL: URL?
     var completionTime: Double
-    var hikeImage: UIImage
+    var hikeImage: UIImage?
     var uuid: String
 
 enum Key {
@@ -27,9 +26,8 @@ enum Key {
     static let hikeName = "hikeName"
     static let location = "location"
     static let rating = "rating"
-    static let date = "date"
+    static let timeStamp = "timeStamp"
     static let distance = "distance"
-    static let entry = "entry"
     static let trailID = "trailID"
     static let userID = "userID"
     static let imageURL = "imageURL"
@@ -42,9 +40,8 @@ enum Key {
         [Key.hikeName : self.hikeName,
          Key.location : self.location,
          Key.rating : self.rating,
-         Key.date : self.date.timeIntervalSince1970,
+         Key.timeStamp : self.timeStamp.timeIntervalSince1970,
          Key.distance : self.distance,
-         Key.entry : self.entry,
          Key.trailID : self.trailID,
          Key.userID : self.userID,
          Key.imageURL : self.imageURL,
@@ -52,13 +49,11 @@ enum Key {
          Key.hikeImage : self.hikeImage,
          Key.uuid : self.uuid]
     }
-    init(hikeName: String, location: String, rating: Int, date: Date = Date(), distance: Double, entry: String, trailID: String, userID: String, imageURL: URL?, completionTime: Double, hikeImage: UIImage, uuid: String) {
+    init(hikeName: String, location: String, timeStamp: Date = Date(), distance: String,trailID: String, userID: String, imageURL: URL?, completionTime: Double, hikeImage: UIImage, uuid: String) {
         self.hikeName = hikeName
         self.location = location
-        self.rating = rating
-        self.date = date
+        self.timeStamp = timeStamp
         self.distance = distance
-        self.entry = entry
         self.trailID = trailID
         self.userID = userID
         self.imageURL = imageURL
@@ -69,10 +64,7 @@ enum Key {
     convenience init?(fromTrailDict dictionary: [String:Any]) {
         guard let hikeName = dictionary[Key.hikeName] as? String,
               let location = dictionary[Key.location] as? String,
-              let rating = dictionary[Key.rating] as? Int,
-              let date = dictionary[Key.date] as? Double,
-              let distance = dictionary[Key.distance] as? Double,
-              let entry = dictionary[Key.entry] as? String,
+              let distance = dictionary[Key.distance] as? String,
               let trailID = dictionary[Key.trailID] as? String,
               let userID = dictionary[Key.userID] as? String,
               let imageURL = dictionary[Key.imageURL] as? URL,
@@ -80,6 +72,6 @@ enum Key {
               let hikeImage = dictionary[Key.hikeImage] as? UIImage,
               let uuid = dictionary[Key.uuid] as? String
         else {return nil}
-        self.init(hikeName: hikeName, location: location, rating: rating, date: Date(timeIntervalSince1970: date), distance: distance, entry: entry, trailID: trailID, userID: userID, imageURL: imageURL, completionTime: completionTime, hikeImage: hikeImage, uuid: uuid)
+        self.init(hikeName: hikeName, location: location, distance: distance, trailID: trailID, userID: userID, imageURL: imageURL, completionTime: completionTime, hikeImage: hikeImage, uuid: uuid)
     }
 }

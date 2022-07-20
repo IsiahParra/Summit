@@ -13,17 +13,25 @@ protocol TrailDetailViewModelDelegate: AnyObject {
 
 class TrailDetailViewModel {
     
-    var trail: Trail?
-    private weak var delegate: TrailDetailViewModelDelegate?
-    private var service: FirebaseSyncable
-    
-    init(trail: Trail? = nil, service: FirebaseSyncable = FirebaseService(), delegate: TrailDetailViewModelDelegate) {
-        self.trail = trail
-        self.service = service
-        self.delegate = delegate
+   private var trail: Trail?
+    var trailName: String {
+        trail?.trailName ?? ""
     }
-    func updateTrail(with name: String, location: String, entry: String, distance: String, rating: Int, imageURL:URL?) {
-        guard let trail = trail else { return }
+    var location: String {
+        trail?.location ?? ""
+    }
+    var description: String {
+        trail?.entry ?? ""
+    }
+    var distance: String {
+        trail?.distance ?? ""
+    }
+    
+    init(trail: Trail) {
+        self.trail = trail
+    }
+    
+    func updateTrail(with trail: String) {
 //        trail.trailName = name
 //        trail.entry = entry
 //        trail.location = location
@@ -31,33 +39,7 @@ class TrailDetailViewModel {
 //        trail.imageURL = imageURL
     }
     
-    func loadTrails() {
-        service.loadTrails { result in
-            switch result {
-            case .success(let trails):
-//                self.trail = trails
-                self.delegate?.trailsLoadedSuccessfully()
-                
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
-    }
-    
-    // need to create a fetch function for the image after creating my firebaseService.
-    func getImage(comepletion: @escaping (UIImage?) -> Void) {
-        guard let trail = trail else {
-            return
-        }
-        service.fetchImageTrail(from: trail) { result in
-            switch result {
-            case .success(let image):
-                comepletion(image)
-            case .failure(let error):
-                print(error)
-                comepletion(nil)
-            }
-        }
+    func displayTrailDetails(trailName: String, location: String, entry: String, distance: String, image: UIImage?) {
         
     }
     

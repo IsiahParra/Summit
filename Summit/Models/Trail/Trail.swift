@@ -10,6 +10,7 @@ import UIKit
 
 struct Trail {
     //properties
+    var timeStamp: Date
     var trailName: String
     var location: String
     var rating: Int?
@@ -21,6 +22,7 @@ struct Trail {
     var image: UIImage?
 
 enum Key {
+    static let timeStamp = "timeStamp"
     static let trailName = "trailName"
     static let location = "location"
     static let distance = "distance"
@@ -38,9 +40,10 @@ enum Key {
          Key.distance : self.distance,
          Key.entry : self.entry,
          Key.uuid : self.uuid,
-         Key.imageURL : self.imageURL]
+         Key.imageURL : self.imageURL,
+         Key.timeStamp : self.timeStamp]
     }
-    init(trailName: String, location: String, rating: Int? = nil, distance: String, entry: String, uuid: String = UUID().uuidString, image: UIImage?, imageURL: URL? = nil) {
+    init(trailName: String, location: String, rating: Int? = nil, distance: String, entry: String, uuid: String = UUID().uuidString, image: UIImage?, imageURL: URL? = nil, timeStamp: Date = Date()) {
         self.trailName = trailName
         self.location = location
         self.rating = rating
@@ -49,6 +52,7 @@ enum Key {
         self.uuid = uuid
         self.image = image
         self.imageURL = imageURL
+        self.timeStamp = timeStamp
     }
     init?(fromTrailDict dictionary: [String:Any]) {
         guard let trailName = dictionary[Key.trailName] as? String,
