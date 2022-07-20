@@ -13,7 +13,11 @@ protocol TrailDetailViewModelDelegate: AnyObject {
 
 class TrailDetailViewModel {
     
-   private var trail: Trail?
+    private let service: FirebaseSyncable
+    private var trail: Trail?
+    
+    var hikes: [Hike] = []
+    
     var trailName: String {
         trail?.trailName ?? ""
     }
@@ -27,8 +31,29 @@ class TrailDetailViewModel {
         trail?.distance ?? ""
     }
     
-    init(trail: Trail) {
+    var numberOfHikes: Int {
+        hikes.count
+    }
+    
+    init(trail: Trail, service: FirebaseSyncable = FirebaseService()) {
         self.trail = trail
+        self.service = service
+    }
+    
+    func fetchHikes() {
+        service.loadHikes { result in
+            switch result {
+            case .success(let hikes):
+                self.hikes = hikes
+            case .failure(let error):
+                // maybe tell the view to show an error
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func hike(at index: Int) -> Hike {
+        hikes[index]
     }
     
     func updateTrail(with trail: String) {
@@ -43,5 +68,4 @@ class TrailDetailViewModel {
         
     }
     
-   
 }// end of class

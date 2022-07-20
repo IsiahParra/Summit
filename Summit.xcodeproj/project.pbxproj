@@ -15,6 +15,8 @@
 		9D1856F72884C3AC00FEDDE6 /* TrailListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1856F62884C3AC00FEDDE6 /* TrailListTableViewCell.swift */; };
 		9D2F01F8287E37AF005EEEED /* LaunchScreenCopyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2F01F7287E37AF005EEEED /* LaunchScreenCopyViewController.swift */; };
 		9D47D2C12886137D00BBBDAD /* TrailsDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D47D2C02886137D00BBBDAD /* TrailsDetailTableViewCell.swift */; };
+		9D4C834D28878DFD0012EB07 /* TrailHikedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4C834C28878DFD0012EB07 /* TrailHikedTableViewCell.swift */; };
+		9D4C83502887C2EC0012EB07 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D4C834F2887C2EC0012EB07 /* MapKit.framework */; };
 		9D71B5BF2876205600100750 /* TabBarController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D71B5BD2876205600100750 /* TabBarController.storyboard */; };
 		9D71B5C12876209D00100750 /* Trails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D71B5C02876209D00100750 /* Trails.storyboard */; };
 		9D71B5C42877453400100750 /* myHikesView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D71B5C22877453400100750 /* myHikesView.storyboard */; };
@@ -63,6 +65,8 @@
 		9D1856F62884C3AC00FEDDE6 /* TrailListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailListTableViewCell.swift; sourceTree = "<group>"; };
 		9D2F01F7287E37AF005EEEED /* LaunchScreenCopyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenCopyViewController.swift; sourceTree = "<group>"; };
 		9D47D2C02886137D00BBBDAD /* TrailsDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailsDetailTableViewCell.swift; sourceTree = "<group>"; };
+		9D4C834C28878DFD0012EB07 /* TrailHikedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailHikedTableViewCell.swift; sourceTree = "<group>"; };
+		9D4C834F2887C2EC0012EB07 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		9D71B5BE2876205600100750 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Summit/Base.lproj/TabBarController.storyboard; sourceTree = "<group>"; };
 		9D71B5C02876209D00100750 /* Trails.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Trails.storyboard; sourceTree = "<group>"; };
 		9D71B5C32877453400100750 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Summit/Summit/Base.lproj/myHikesView.storyboard; sourceTree = "<group>"; };
@@ -104,6 +108,7 @@
 			files = (
 				9DAE1EC5287C8D8D00AE191A /* FirebaseDatabase in Frameworks */,
 				9DAE1EC9287C8D8D00AE191A /* FirebaseStorage in Frameworks */,
+				9D4C83502887C2EC0012EB07 /* MapKit.framework in Frameworks */,
 				9DAE1EC3287C8D8D00AE191A /* FirebaseAuth in Frameworks */,
 				9DAE1EC7287C8D8D00AE191A /* FirebaseFirestore in Frameworks */,
 			);
@@ -117,6 +122,7 @@
 			children = (
 				9D12D3AC286F5BD30009018D /* Summit */,
 				9D12D3AB286F5BD30009018D /* Products */,
+				9D4C834E2887C2EC0012EB07 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -161,6 +167,14 @@
 				9D2F01F7287E37AF005EEEED /* LaunchScreenCopyViewController.swift */,
 			);
 			path = LaunchScreenCopy;
+			sourceTree = "<group>";
+		};
+		9D4C834E2887C2EC0012EB07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9D4C834F2887C2EC0012EB07 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		9D71B5C52877454900100750 /* MyHikesView */ = {
@@ -313,6 +327,7 @@
 			children = (
 				9D1856F62884C3AC00FEDDE6 /* TrailListTableViewCell.swift */,
 				9D47D2C02886137D00BBBDAD /* TrailsDetailTableViewCell.swift */,
+				9D4C834C28878DFD0012EB07 /* TrailHikedTableViewCell.swift */,
 			);
 			path = CustomCell;
 			sourceTree = "<group>";
@@ -441,6 +456,7 @@
 				9D71B5EF287800F000100750 /* SignInViewController.swift in Sources */,
 				9D7FACF62870B27600C51B9E /* User.swift in Sources */,
 				9DF1E57E287F4AF4005782BF /* TrailListTableViewController.swift in Sources */,
+				9D4C834D28878DFD0012EB07 /* TrailHikedTableViewCell.swift in Sources */,
 				9D7FACF82871011A00C51B9E /* Trail.swift in Sources */,
 				9D71B5E92877627300100750 /* DateHelper.swift in Sources */,
 				9D47D2C12886137D00BBBDAD /* TrailsDetailTableViewCell.swift in Sources */,
