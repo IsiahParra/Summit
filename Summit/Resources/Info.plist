@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>In order to track your hikes we will need your location</string>
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>
@@ -36,9 +38,5 @@
 			</array>
 		</dict>
 	</dict>
-	<key>NSLocationUsageDescription</key>
-	<string>We&apos;ll need to see your location in order to track your hikes.</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>We&apos;ll need to see your location in order to track your hikes.</string>
 </dict>
 </plist>

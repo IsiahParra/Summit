@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="st3-D4-gqH">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -12,28 +13,30 @@
             <objects>
                 <viewController id="sYW-zm-7ZS" customClass="CurrentTrailTrackingViewController" customModule="Summit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kPh-87-HzC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zxb-aP-F9c">
-                                <rect key="frame" x="40" y="108" width="334" height="80"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zxb-aP-F9c">
+                                <rect key="frame" x="40" y="64" width="295" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="7Kb-Cn-mjd"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bu1-6w-cS6">
-                                <rect key="frame" x="179" y="801" width="56" height="31"/>
+                                <rect key="frame" x="-10" y="-75" width="77" height="44"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Start"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Start">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
+                                </buttonConfiguration>
                                 <connections>
-                                    <action selector="startStopButtonTapped:" destination="sYW-zm-7ZS" eventType="touchUpInside" id="818-IZ-7x0"/>
+                                    <action selector="startStopButtonTapped:" destination="sYW-zm-7ZS" eventType="touchUpInside" id="X5I-yg-T5M"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sX4-La-B8A">
-                                <rect key="frame" x="20" y="204" width="374" height="27.5"/>
+                                <rect key="frame" x="20" y="160" width="335" height="27.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Y0-L1-alV">
                                         <rect key="frame" x="0.0" y="0.0" width="93" height="27.5"/>
@@ -42,7 +45,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="0.0 miles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N50-gh-w7a">
-                                        <rect key="frame" x="101" y="0.0" width="273" height="27.5"/>
+                                        <rect key="frame" x="101" y="0.0" width="234" height="27.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -50,33 +53,71 @@
                                 </subviews>
                             </stackView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="rSi-1m-Rbn">
-                                <rect key="frame" x="16" y="251.5" width="382" height="529.5"/>
+                                <rect key="frame" x="16" y="207.5" width="343" height="365.5"/>
+                                <connections>
+                                    <outlet property="delegate" destination="sYW-zm-7ZS" id="BoX-Bo-SR5"/>
+                                </connections>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psr-AI-jh2">
+                                <rect key="frame" x="294" y="89" width="61" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Reset"/>
+                                <connections>
+                                    <action selector="resetButtonTapped:" destination="sYW-zm-7ZS" eventType="touchUpInside" id="UqP-QY-97z"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pGs-p8-IMN">
+                                <rect key="frame" x="150" y="606" width="75" height="48"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="0.3989628341" green="0.59694088729999994" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Finished Hike"/>
+                                <connections>
+                                    <action selector="finishedHikeButtonTapped:" destination="sYW-zm-7ZS" eventType="touchUpInside" id="ma3-4W-cMm"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="tap here to pause and unpause your timer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IYX-xX-Qdv">
+                                <rect key="frame" x="10" y="54" width="199" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="U6Y-h1-iwC"/>
-                        <color key="backgroundColor" red="1" green="0.88274361690000003" blue="0.69046114979999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemBrownColor"/>
                         <accessibility key="accessibilityConfiguration">
                             <accessibilityTraits key="traits" button="YES"/>
                         </accessibility>
                         <constraints>
+                            <constraint firstItem="U6Y-h1-iwC" firstAttribute="trailing" secondItem="pGs-p8-IMN" secondAttribute="trailing" constant="150" id="1bX-ZP-9cU"/>
+                            <constraint firstItem="U6Y-h1-iwC" firstAttribute="trailing" secondItem="psr-AI-jh2" secondAttribute="trailing" constant="20" id="4yJ-l8-o3H"/>
+                            <constraint firstItem="sX4-La-B8A" firstAttribute="top" secondItem="psr-AI-jh2" secondAttribute="bottom" constant="40" id="5sG-kq-Z82"/>
                             <constraint firstItem="zxb-aP-F9c" firstAttribute="top" secondItem="U6Y-h1-iwC" secondAttribute="top" constant="20" id="7KD-we-2Gw"/>
                             <constraint firstItem="sX4-La-B8A" firstAttribute="top" secondItem="zxb-aP-F9c" secondAttribute="bottom" constant="16" id="8JR-jD-40T"/>
                             <constraint firstItem="zxb-aP-F9c" firstAttribute="leading" secondItem="U6Y-h1-iwC" secondAttribute="leading" constant="40" id="Bh9-vW-Jex"/>
+                            <constraint firstItem="psr-AI-jh2" firstAttribute="top" secondItem="U6Y-h1-iwC" secondAttribute="top" constant="45" id="EiT-5Z-EQj"/>
                             <constraint firstItem="U6Y-h1-iwC" firstAttribute="trailing" secondItem="rSi-1m-Rbn" secondAttribute="trailing" constant="16" id="F4h-TD-rcA"/>
                             <constraint firstItem="sX4-La-B8A" firstAttribute="leading" secondItem="U6Y-h1-iwC" secondAttribute="leading" constant="20" id="OFg-6z-PyE"/>
+                            <constraint firstItem="IYX-xX-Qdv" firstAttribute="leading" secondItem="U6Y-h1-iwC" secondAttribute="leading" constant="10" id="TNM-v8-qmU"/>
+                            <constraint firstItem="U6Y-h1-iwC" firstAttribute="trailing" secondItem="IYX-xX-Qdv" secondAttribute="trailing" constant="166" id="TOt-Wx-E6a"/>
+                            <constraint firstItem="pGs-p8-IMN" firstAttribute="top" secondItem="rSi-1m-Rbn" secondAttribute="bottom" constant="33" id="UFc-ft-FDQ"/>
                             <constraint firstItem="U6Y-h1-iwC" firstAttribute="trailing" secondItem="zxb-aP-F9c" secondAttribute="trailing" constant="40" id="WXL-dl-mFl"/>
-                            <constraint firstItem="U6Y-h1-iwC" firstAttribute="bottom" secondItem="bu1-6w-cS6" secondAttribute="bottom" constant="30" id="bbE-HZ-D0p"/>
+                            <constraint firstItem="U6Y-h1-iwC" firstAttribute="bottom" secondItem="bu1-6w-cS6" secondAttribute="bottom" constant="698" id="bbE-HZ-D0p"/>
                             <constraint firstItem="rSi-1m-Rbn" firstAttribute="top" secondItem="sX4-La-B8A" secondAttribute="bottom" constant="20" id="eHG-Uz-X8o"/>
-                            <constraint firstItem="bu1-6w-cS6" firstAttribute="top" secondItem="rSi-1m-Rbn" secondAttribute="bottom" constant="20" id="oI0-g1-Eva"/>
+                            <constraint firstItem="IYX-xX-Qdv" firstAttribute="top" secondItem="U6Y-h1-iwC" secondAttribute="top" constant="10" id="gkk-ie-a6h"/>
+                            <constraint firstItem="pGs-p8-IMN" firstAttribute="leading" secondItem="U6Y-h1-iwC" secondAttribute="leading" constant="150" id="o6R-rI-Alg"/>
+                            <constraint firstItem="bu1-6w-cS6" firstAttribute="top" secondItem="rSi-1m-Rbn" secondAttribute="bottom" constant="-648" id="oI0-g1-Eva"/>
                             <constraint firstItem="U6Y-h1-iwC" firstAttribute="trailing" secondItem="sX4-La-B8A" secondAttribute="trailing" constant="20" id="qU5-Um-JmO"/>
-                            <constraint firstItem="bu1-6w-cS6" firstAttribute="centerX" secondItem="kPh-87-HzC" secondAttribute="centerX" id="rue-eX-RVE"/>
+                            <constraint firstItem="bu1-6w-cS6" firstAttribute="centerX" secondItem="kPh-87-HzC" secondAttribute="centerX" constant="-159" id="rue-eX-RVE"/>
                             <constraint firstItem="rSi-1m-Rbn" firstAttribute="leading" secondItem="U6Y-h1-iwC" secondAttribute="leading" constant="16" id="wQk-vf-whn"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Current Trail Detail" id="T5d-PC-ay8"/>
                     <connections>
                         <outlet property="distanceLabel" destination="N50-gh-w7a" id="Fxn-aU-Diy"/>
+                        <outlet property="finishedHikeButton" destination="pGs-p8-IMN" id="wbm-BC-4ji"/>
                         <outlet property="mapView" destination="rSi-1m-Rbn" id="cS7-I4-NRo"/>
+                        <outlet property="resetButtonTapped" destination="psr-AI-jh2" id="joL-Rs-3Lt"/>
                         <outlet property="startStopButton" destination="bu1-6w-cS6" id="tCl-nH-pKs"/>
                         <outlet property="timerLabel" destination="zxb-aP-F9c" id="q2G-dP-XlO"/>
                     </connections>
@@ -91,7 +132,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="st3-D4-gqH" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ARk-DQ-o8T">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -104,4 +145,9 @@
             <point key="canvasLocation" x="-378.26086956521743" y="3164.7321428571427"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

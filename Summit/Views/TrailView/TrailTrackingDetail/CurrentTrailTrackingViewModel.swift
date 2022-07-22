@@ -20,7 +20,7 @@ class CurrentTrailTrackingViewModel {
     func trackTrail(with distance: String, location: String, completionTime: Double) {
         guard let trail = trail
         else { return }
-        
+        locationServices.requestWhenInUseAuthorization()
         
 //        trail.distance = distance
 //        trail.location = location
