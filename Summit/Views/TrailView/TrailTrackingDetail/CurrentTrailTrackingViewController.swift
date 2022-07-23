@@ -18,6 +18,7 @@ class CurrentTrailTrackingViewController: UIViewController {
     @IBOutlet weak var resetButtonTapped: UIButton!
     @IBOutlet weak var finishedHikeButton: UIButton!
     
+//    let viewModel = CurrentTrailTrackingViewModel()
     let locationManager = CLLocationManager()
     
     var isTracking = false
@@ -175,6 +176,9 @@ class CurrentTrailTrackingViewController: UIViewController {
         mapView.setRegion(region, animated: true)
     }
     @IBAction func finishedHikeButtonTapped(_ sender: Any) {
+        
+        
+        
         let alertFinishedHike = UIAlertController(title: "Finished with your Hike?", message: "Are you sure you are done with the Hike?", preferredStyle: .alert)
         alertFinishedHike.addAction(UIAlertAction(title: "No", style: .cancel, handler: { (_) in
             // do nothing

@@ -17,6 +17,7 @@ enum FirebaseError: Error {
     case noDataFound
 }
 protocol FirebaseSyncable {
+    func logoutUser()
     func save(trail: Trail, with image: UIImage?, completion: @escaping (Result<Void, Error>) -> Void)
     func loadTrails(completion: @escaping (Result<[Trail], FirebaseError>) -> Void)
     func deleteTrail(trail: Trail)
@@ -33,7 +34,17 @@ protocol FirebaseSyncable {
     func signOut(With user: User)
     func signInWithApple( token: String, nonce: String)
 }
+
 struct FirebaseService: FirebaseSyncable {
+    func logoutUser() {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+            print("Error signing out", signOutError)
+        }
+    }
+    
     
     let reference = Firestore.firestore()
     let storage = Storage.storage().reference()

@@ -18,10 +18,10 @@
             </objects>
             <point key="canvasLocation" x="2607" y="1373"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="Nno-zg-pNw">
             <objects>
-                <viewController id="g48-q1-efx" sceneMemberID="viewController">
+                <viewController id="g48-q1-efx" customClass="SettingsViewController" customModule="Summit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kss-Md-iHC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -31,6 +31,9 @@
                                 <color key="tintColor" systemColor="systemRedColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Sign Out"/>
+                                <connections>
+                                    <action selector="signoutButtonTapped:" destination="fr3-Ke-S2P" eventType="touchUpInside" id="1Zu-Zm-EPn"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCw-Ku-cAq">
                                 <rect key="frame" x="177" y="44" width="86" height="29"/>
@@ -53,6 +56,7 @@
                     <navigationItem key="navigationItem" id="HV4-zd-VUI"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nzq-8c-SVD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="fr3-Ke-S2P" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2908" y="1966"/>
         </scene>

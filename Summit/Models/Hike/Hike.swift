@@ -49,7 +49,7 @@ enum Key {
          Key.hikeImage : self.hikeImage,
          Key.uuid : self.uuid]
     }
-    init(hikeName: String, location: String, timeStamp: Date = Date(), distance: String,trailID: String, userID: String, imageURL: URL?, completionTime: Double, hikeImage: UIImage, uuid: String) {
+    init(hikeName: String, location: String, timeStamp: Date = Date(), distance: String,trailID: String, userID: String, imageURL: URL? = nil, completionTime: Double, hikeImage: UIImage?, uuid: String = UUID().uuidString) {
         self.hikeName = hikeName
         self.location = location
         self.timeStamp = timeStamp
