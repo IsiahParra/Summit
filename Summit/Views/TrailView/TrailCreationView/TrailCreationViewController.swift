@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TrailCreationViewController: UIViewController {
+class TrailCreationViewController: UIViewController, UINavigationControllerDelegate {
 
     @IBOutlet weak var trailNameTextField: UITextField!
     @IBOutlet weak var locationTextField: UITextField!
@@ -50,6 +50,32 @@ class TrailCreationViewController: UIViewController {
             }
             
         }
+        
+        func imageViewTapped() {
+            let picker = UIImagePickerController()
+            picker.sourceType = .photoLibrary
+            picker.delegate = self
+            picker.allowsEditing = true
+            present(picker, animated: true)
+        }
+        
+        func updateUI() {
+            guard let trail = viewModel.trail else { return }
+            trailNameTextField.text = trail.trailName
+            locationTextField.text = trail.location
+            trailDescriptionTextView.text = trail.entry
+            viewModel.getImage(from: trail) { image in
+                self.trailImageView.image = image
+            }
+        }
+//         func setupImageView() {
+//            trailImageView.contentMode = .scaleAspectFit
+//            trailImageView.isUserInteractionEnabled = true
+//             let tapGesture = UIGestureRecognizer(target: self, action: #selector(.trailImageView))
+//            trailImageView.addGestureRecognizer(tapGesture)
+//        }
+        
+        
     }
     
     /*
@@ -62,4 +88,15 @@ class TrailCreationViewController: UIViewController {
     }
     */
 
+}
+
+extension TrailCreationViewController: UIImagePickerControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true) {
+            guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
+                return
+            }
+            self.trailImageView.image = image
+        }
+    }
 }

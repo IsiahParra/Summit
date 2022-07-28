@@ -24,25 +24,28 @@ class TrailCreationViewModel {
         } else {
             let trail = Trail(trailName: name, location: location, distance: distance, entry: entry, image: image)
             service.save(trail: trail, with: image, completion: completion)
-//            service.save(trail: trail, with: image) { result in
-//                print(result)
-//                completion()
-            
-            // TODO: Ask karl or someone with a little bit more experience why it makes you call all the other properties from the model for the else statment. do I need to initalize some properties?
-            
         }
         // also being able to get an image from storage in firebase
     }
+    
     private func updateTrail(with name: String, entry: String, location: String, image: UIImage?, distance: String) {
         guard let trail = trail else {
             return
         }
-//        trail.trailName = name
-//        trail.entry = entry
-//        trail.location = location
-//        trail.image = image
-//        trail.distance = distance
-//        service.save(trail: trail, with: image)
+    }
+    func getImage( from trail: Trail?, completion: @escaping (UIImage? ) -> Void) {
+        guard let trail = trail else {
+            return
+        }
+        service.fetchImageTrail(from: trail) { result in
+            switch result {
+            case .success(let image):
+                completion(image)
+            case .failure(let error):
+                print(error)
+                completion(nil)
+            }
+        }
     }
     
 }// end of class

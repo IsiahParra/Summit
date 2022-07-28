@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol TrailListViewModelDelegate: AnyObject {
    func fetchedTrailsSuccessfully()
@@ -34,6 +35,21 @@ class TrailListViewModel {
             }
         }
     }
+    
+    func getImage( from trail: Trail?, completion: @escaping (UIImage?) -> Void) {
+        guard let trail = trail else { return }
+        service.fetchImageTrail(from: trail) { result in
+            switch result {
+            case .success(let image):
+                completion(image)
+            case .failure(let error):
+                print(error)
+                completion(nil)
+            }
+        }
+    }
+    
+    
     
     func delete(index: Int) {
         let trail = trails[index]

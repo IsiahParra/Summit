@@ -7,14 +7,27 @@
 
 import UIKit
 
-class TrailListTableViewController: UITableViewController {
+class TrailListTableViewController: UITableViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
 
     var viewModel: TrailListViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = TrailListViewModel(delegate: self)
+        
     }
+    
+    
+    @objc func imageViewTapped() {
+        let picker = UIImagePickerController()
+        picker.sourceType = .photoLibrary
+        picker.delegate = self
+        picker.allowsEditing = true
+        present(picker, animated: true)
+    }
+    
+    
+    
 
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

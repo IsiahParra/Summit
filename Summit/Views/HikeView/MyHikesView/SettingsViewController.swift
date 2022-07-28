@@ -6,14 +6,14 @@
 //
 
 import UIKit
-
+import FirebaseAuth
 class SettingsViewController: UIViewController {
     
-    let viewModel: SettingsViewModel!
+    let viewModel = SettingsViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     @IBAction func signoutButtonTapped(_ sender: Any) {
@@ -22,7 +22,6 @@ class SettingsViewController: UIViewController {
         let loginViewController = storyboard.instantiateViewController(withIdentifier: "SignInView")
         (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(viewController: loginViewController)
     }
-    
 
     /*
     // MARK: - Navigation

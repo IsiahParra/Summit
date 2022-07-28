@@ -18,7 +18,7 @@ class CurrentTrailTrackingViewController: UIViewController {
     @IBOutlet weak var resetButtonTapped: UIButton!
     @IBOutlet weak var finishedHikeButton: UIButton!
     
-//    let viewModel = CurrentTrailTrackingViewModel()
+    //    let viewModel = CurrentTrailTrackingViewModel()
     let locationManager = CLLocationManager()
     
     var isTracking = false
@@ -31,30 +31,33 @@ class CurrentTrailTrackingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        checkLocationServices()
         startStopButton.setTitleColor(UIColor.green, for: .normal)
+        checkLocationServices()
     }
     override func viewDidAppear(_ animated: Bool) {
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
+        setupMap()
     }
     
     func setUpLocationManager() {
-        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+//        locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.distanceFilter = kCLDistanceFilterNone
+        locationManager.startUpdatingLocation()
     }
     
     func checkLocationServices() {
         if CLLocationManager.locationServicesEnabled() {
             setUpLocationManager()
-            locationManagerDidChangeAuthorization(locationManager)
+            setupMap()
+//            locationManagerDidChangeAuthorization(locationManager)
         } else {
             // show an alert letting the user know they have to turn this on.
+            locationManager.requestWhenInUseAuthorization()
+//            showSettingsAlert()
         }
     }
-
+    
     func showSettingsAlert() {
         let alertController = UIAlertController(title: "Please enable Location Services", message: "Location Services are needed to track your Hikes, please adjust in Settings", preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: "Button: This dismisses the alert"), style: .cancel)
@@ -70,56 +73,12 @@ class CurrentTrailTrackingViewController: UIViewController {
         self.present(alertController, animated: true)
     }
     
-    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        switch locationManager.authorizationStatus {
-        case .restricted, .denied:
-            showSettingsAlert()
-           // app's location features are being denied or restricted
-           
-        case .notDetermined:
-            locationManager.requestWhenInUseAuthorization()
-            
-        default:
-            break
-        }
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.first {
-            locationManager.stopUpdatingLocation()
-            
-            setupMap(location: location)
-        }
-        
-    }
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("There has been an error!", error.localizedDescription)
-    }
-    
-    @IBAction func resetButtonTapped(_ sender: Any) {
-        let alert = UIAlertController(title: "Reset Timer?", message: "Are you sure you would like to reset the Timer?", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (_) in
-            // do nothing
-        }))
-        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (_) in
-            self.count = 0
-            self.timer.invalidate()
-            self.timerLabel.text = self.makeTimeString(hours: 0, minutes: 0, seconds: 0)
-            self.startStopButton.setTitle("START", for: .normal)
-            self.startStopButton.setTitleColor(UIColor.green, for: .normal)
-        }))
-        self.present(alert, animated: true, completion: nil)
-    }
-    
+  
     
     @IBAction func startStopButtonTapped(_ sender: Any) {
         if (timerCounting) {
-            timerCounting = false
-            timer.invalidate()
-            startStopButton.setTitle("START", for: .normal)
-            startStopButton.setTitleColor(UIColor.green, for: .normal)
             // Show an alert asking the user if they are sure they want to end the hike.
-            
+            presentFinishHikeConfirmationAlert()
             // End the hike
         }
         
@@ -169,41 +128,65 @@ class CurrentTrailTrackingViewController: UIViewController {
     }
     
     
-    private func setupMap(location: CLLocation) {
-        let coordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-        let region = MKCoordinateRegion(center: coordinate, span: span)
-        mapView.setRegion(region, animated: true)
+    private func setupMap() {
+        guard let userLocation = locationManager.location
+        else { return }
+////        let coordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+////        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+////        let region = MKCoordinateRegion(center: coordinate, span: span)
+////        mapView.setRegion(region, animated: true)
+        mapView.showsUserLocation = true
     }
-    @IBAction func finishedHikeButtonTapped(_ sender: Any) {
-        
-        
-        
+    
+    
+    func presentFinishHikeConfirmationAlert() {
         let alertFinishedHike = UIAlertController(title: "Finished with your Hike?", message: "Are you sure you are done with the Hike?", preferredStyle: .alert)
         alertFinishedHike.addAction(UIAlertAction(title: "No", style: .cancel, handler: { (_) in
             // do nothing
         }))
         alertFinishedHike.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (_) in
+            self.timerCounting = false
             self.count = 0
             self.timer.invalidate()
             self.timerLabel.text = self.makeTimeString(hours: 0, minutes: 0, seconds: 0)
             self.startStopButton.setTitle("START", for: .normal)
             self.startStopButton.setTitleColor(UIColor.green, for: .normal)
-//            let storyboard = UIStoryboard(name: "Hikes", bundle: nil)
-//            guard let hikesController = storyboard.instantiateViewController(withIdentifier: "myHikesList") as? UIViewController else { return }
-//            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(viewController: hikesController)
         }))
         self.present(alertFinishedHike, animated: true, completion: nil)
-        
-        
-        
     }
     
+    func presentSaveOrTrashHikeAlert() {
+//        let alertSaveorTrashHike = UIAlertController(title: "", message: <#T##String?#>, preferredStyle: <#T##UIAlertController.Style#>)
+    }
     
 }// end of class
 
 extension CurrentTrailTrackingViewController: CLLocationManagerDelegate {
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        switch locationManager.authorizationStatus {
+        case .restricted, .denied:
+//            showSettingsAlert()
+            // app's location features are being denied or restricted
+            locationManager.requestWhenInUseAuthorization()
+            
+        case .notDetermined:
+            print("NOT DETERMINED")
+            
+        default:
+            break
+        }
+    }
     
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first {
+            //            locationManager.stopUpdatingLocation()
+            
+        }
+        
+    }
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("There has been an error!", error.localizedDescription)
+    }
 }
 
 

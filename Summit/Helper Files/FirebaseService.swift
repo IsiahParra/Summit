@@ -36,6 +36,10 @@ protocol FirebaseSyncable {
 }
 
 struct FirebaseService: FirebaseSyncable {
+    
+    let reference = Firestore.firestore()
+    let storage = Storage.storage().reference()
+    
     func logoutUser() {
         let firebaseAuth = Auth.auth()
         do {
@@ -46,8 +50,6 @@ struct FirebaseService: FirebaseSyncable {
     }
     
     
-    let reference = Firestore.firestore()
-    let storage = Storage.storage().reference()
     
     func signInWithApple(token: String, nonce: String) {
         let credentials = OAuthProvider.credential(withProviderID: "apple.com", idToken: token, rawNonce: nonce)
